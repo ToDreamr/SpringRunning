@@ -1,0 +1,45 @@
+server:
+  port: 9201
+file:
+  ip: localhost
+spring:
+  account: ${backend.account}
+  mail:
+    host: ${backend.mail.host}
+    port: ${backend.mail.port}
+    username: ${backend.mail.username}
+    password: ${backend.mail.password}
+    default-encoding: utf-8
+    test-connection: true
+    properties:
+      connection-timeout: 500
+  security:
+    jwt:
+      key: ${backend.security.security.jwt.key}
+      expire: ${backend.security.security.jwt.expire}
+    user:
+      name: ${backend.security.security.user.name}
+      password: ${backend.datasource.password}
+    filter:
+      order: -120
+  web:
+    cors:
+      origin: '*'
+      credentials: false
+      methods: '*'
+  data:
+    redis:
+      port: 6379
+  datasource:
+    url: jdbc:mysql://${backend.datasource.host}:${backend.datasource.port}/${backend.datasource.database}
+    password: ${backend.datasource.password}
+    username: ${backend.datasource.username}
+    driver-class-name: ${backend.datasource.driver-class-name}
+logging:
+  pattern:
+    dateformat: HH:mm:ss
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+url: ${backend.url}
+
