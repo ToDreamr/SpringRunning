@@ -6,10 +6,9 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public interface LoginUserMapper extends BaseMapper<LoginUser> {
-    static final String DATABASE = "backend-base";
+    static final String DATABASE = "spring_runner";
 
     @Select("select * from "+DATABASE+".tb_user where username=#{username}")
     LoginUser loadUserByUsername(@Param("username") String username);

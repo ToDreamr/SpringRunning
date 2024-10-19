@@ -2,13 +2,16 @@ spring:
   profiles:
     active: dev
 
+runner:
+  schemaName: "spring_runner"
+  tableName: "tb_user"
 backend:
   account: '春江花朝秋月夜'
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     host: localhost
     port: 3306
-    database: backend-base
+    database: spring_runner
     username: root
     password: 123456
   url: 127.0.0.1

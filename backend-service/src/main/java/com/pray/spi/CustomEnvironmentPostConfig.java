@@ -1,4 +1,4 @@
-package com.pray.config;
+package com.pray.spi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
@@ -16,10 +16,11 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Order()
+@Order(0)
 public class CustomEnvironmentPostConfig implements EnvironmentPostProcessor {
+    //静态字段，无法使用Spring注入，后续使用文件内容？？？
     public static final String TABLE_NAME = "tb_sys";
-    public static final String SQL = "select * from `backend-base`.tb_sys";
+    public static final String SQL = "select * from `spring_runner`.tb_sys";
 
     public static final String sqlPath = "";
     private static final String DATABASE = "backend-base";

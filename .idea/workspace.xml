@@ -4,7 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="init" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="init">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/controller/BorrowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/controller/BorrowHandlerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/entity/po/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/entity/po/BookUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/entity/po/Borrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/entity/vo/response/BorrowedListVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/entity/vo/response/UserListVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/BookMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/BookUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/BorrowMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/properties/DataBaseSchemaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/filter/OnceRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/OnceRequestInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/BookUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/BorrowService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/impl/BookUserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/impl/BorrowServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/aop/LoginCheckAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/aop/LoginCheckAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/cache/RedisPreProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/cache/RedisPreProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/CustomEnvironmentPostConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/CustomEnvironmentPostConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/LoginUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/LoginUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/utils/JwtAuthUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/META-INF/spring.factories" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,8 +99,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/SpingRunning",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "D:/SpingRunning/backend-service/src/main/java/com/pray/service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,11 +128,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\backend-base\backend-service\src\main\resources\META-INF" />
-      <recent name="D:\backend-base\doc" />
-      <recent name="D:\backend-base\backend-service\src\main\java\com\pray\service" />
-      <recent name="D:\backend-base\backend-dao\src\main\java\com\pray\mapper" />
-      <recent name="D:\backend-base\backend-common\src\main\java\com\pray\entity" />
+      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\service" />
+      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\entity\po" />
+      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\mapper" />
+      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray" />
+      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\service\impl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SpingRunning\backend-service\src\main\resources" />
@@ -103,6 +141,9 @@
       <recent name="D:\demo-all\backend-base" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pray.entity.po" />
+      <recent name="com.pray.entity.vo.response" />
+      <recent name="com.pray.controller" />
       <recent name="com.pray.entity.vo.request" />
       <recent name="com.pray.common" />
     </key>
@@ -114,7 +155,16 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpringRunning">
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
     <configuration name="redis" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
@@ -130,6 +180,27 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="SpringRunning" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="backend-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.pray.SpringRunning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pray.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SpringRunning" />
+        <item itemvalue="HTTP 请求.generated-requests | #5" />
+        <item itemvalue="HTTP 请求.generated-requests | #4" />
+        <item itemvalue="HTTP 请求.generated-requests | #3" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SQLScriptSettings">
     <option name="matrix">
@@ -137,6 +208,8 @@
         <entry key="MYSQL.CreateComplete" value="UseSurrogates=1, IgnoreDefiner=1, CreateOrReplace=1, CreateIfNotExists=1, CurrentSequenceValue=1" />
       </map>
     </option>
+    <option name="outputLayout" value="File per object by schema and database.groovy" />
+    <option name="outputPath" value="D:\SpingRunning" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -213,7 +286,8 @@
       <workItem from="1729213069381" duration="1006000" />
       <workItem from="1729214079165" duration="376000" />
       <workItem from="1729214458952" duration="2584000" />
-      <workItem from="1729242059995" duration="1526000" />
+      <workItem from="1729242059995" duration="2106000" />
+      <workItem from="1729341206003" duration="14037000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -242,7 +316,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="gitlab/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
