@@ -1,8 +1,9 @@
 package com.pray.controller;
 
-import com.pray.service.BookService;
-import com.pray.service.BookUserService;
-import com.pray.service.BorrowService;
+import com.pray.entity.enums.BorrowStatus;
+import com.pray.service.dao.BookService;
+import com.pray.service.dao.BookUserService;
+import com.pray.service.dao.BorrowService;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,10 @@ public class BorrowController {
     @Resource
     private BookUserService bookUserService;
 
+    /**
+     * 获取借阅书籍的数据
+     * @return Result<List<List<BorrowedListVO>>>
+     */
     @GetMapping
     public Result<?> borrowList() {
         return Result.ok(bookService.borrowList());
@@ -42,9 +47,9 @@ public class BorrowController {
     public Result<Map<String, Object>> borrowBook(@PathVariable("userId") int userId,@PathVariable("bookId") int bookId){
         int isBorrowed = bookUserService.borrowBook(userId, bookId);
         List<Map<String, Object>> mapList = borrowService.selectBorrowDetails(userId, bookId);
-        if (isBorrowed==1) {
+        if (isBorrowed == BorrowStatus.SUCCESS.getCode()) {
             return Result.ok(mapList.get(0),"借阅成功");
-        } else if (isBorrowed==2) {
+        } else if (isBorrowed==BorrowStatus.BORROWED.getCode()) {
             return Result.fail("借阅失败，这本书你已经借过了");
         }
         return Result.fail("借阅失败");

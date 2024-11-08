@@ -30,7 +30,8 @@ spring:
       methods: '*'
   data:
     redis:
-      port: 6379
+      port: ${backend.redis.port}
+      host: ${backend.redis.host}
   datasource:
     url: jdbc:mysql://${backend.datasource.host}:${backend.datasource.port}/${backend.datasource.database}
     password: ${backend.datasource.password}
@@ -39,9 +40,6 @@ spring:
 logging:
   pattern:
     dateformat: HH:mm:ss
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       table-prefix: tb_

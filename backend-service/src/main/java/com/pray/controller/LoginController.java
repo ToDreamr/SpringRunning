@@ -2,7 +2,7 @@ package com.pray.controller;
 
 import com.pray.common.UserHolder;
 import com.pray.entity.dto.RegisterDto;
-import com.pray.service.UserService;
+import com.pray.service.dao.UserService;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;

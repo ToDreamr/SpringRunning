@@ -2,7 +2,7 @@ package com.pray.config;
 
 import com.pray.entity.po.LoginUser;
 import com.pray.entity.vo.response.AuthorizeVO;
-import com.pray.service.UserService;
+import com.pray.service.dao.UserService;
 import com.pray.utils.JwtUtils;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;

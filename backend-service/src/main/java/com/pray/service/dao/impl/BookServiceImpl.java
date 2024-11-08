@@ -1,12 +1,12 @@
-package com.pray.service.impl;
+package com.pray.service.dao.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.pray.entity.po.Book;
 import com.pray.entity.vo.response.BorrowedListVO;
 import com.pray.entity.vo.response.UserListVO;
 import com.pray.mapper.BookMapper;
-import com.pray.service.BookService;
-import com.pray.service.BorrowService;
+import com.pray.service.dao.BookService;
+import com.pray.service.dao.BorrowService;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;

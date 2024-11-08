@@ -1,25 +1,19 @@
-package com.pray.service.impl;
+package com.pray.service.dao.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.pray.entity.po.Book;
 import com.pray.entity.po.Borrow;
 import com.pray.mapper.BookMapper;
 import com.pray.mapper.BorrowMapper;
-import com.pray.service.BorrowService;
+import com.pray.service.dao.BorrowService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
-/**
-* @author Rainy-Heights
-* @description 针对表【borrow(借阅表)】的数据库操作Service实现
-* @createDate 2024-02-19 16:42:23
-*/
 @Service
-public class BorrowServiceImpl extends ServiceImpl<BorrowMapper, Borrow>
-    implements BorrowService{
+public class BorrowServiceImpl extends ServiceImpl<BorrowMapper, Borrow> implements BorrowService {
     @Resource
     private BorrowMapper borrowMapper;
     @Resource

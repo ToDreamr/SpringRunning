@@ -1,4 +1,4 @@
-package com.pray.service;
+package com.pray.service.dao;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.pray.entity.po.Book;

@@ -28,3 +28,6 @@ backend:
     port: 25
     username: 484510171@qq.com
     password: tsoqdcghdzqobhii
+  redis:
+    host: "192.168.74.129"
+    port: 6379

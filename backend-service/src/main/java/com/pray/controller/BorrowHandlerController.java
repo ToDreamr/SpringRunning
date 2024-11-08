@@ -1,7 +1,7 @@
 package com.pray.controller;
 
 import com.pray.entity.po.Book;
-import com.pray.service.BorrowService;
+import com.pray.service.dao.BorrowService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class BorrowHandlerController {
     private BorrowService borrowService;
 
     /**
-     * 所有的借阅信息
+     * 所有的借阅人和借阅信息
      * @return
      */
     @GetMapping("/borrowUsers")
@@ -60,8 +60,8 @@ public class BorrowHandlerController {
     }
 
     /**
-     * 借阅表
-     * @return
+     * 获取借阅表信息
+     * @return List<Book>
      */
     @GetMapping("/booklist")
     public List<Book> listBook(){

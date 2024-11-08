@@ -1,4 +1,4 @@
-package com.pray.service.impl;
+package com.pray.service.dao.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;
@@ -16,7 +16,7 @@ import com.pray.entity.po.LoginUser;
 import com.pray.entity.vo.response.AuthorizeVO;
 import com.pray.mapper.LoginUserMapper;
 import com.pray.mapper.UserMapper;
-import com.pray.service.UserService;
+import com.pray.service.dao.UserService;
 import com.pray.constant.PrayConstants;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;

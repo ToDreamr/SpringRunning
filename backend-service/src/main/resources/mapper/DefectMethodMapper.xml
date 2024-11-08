@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pray.mapper.DefectMethodMapper">
+
+    <resultMap id="BaseResultMap" type="com.pray.entity.DefectMethod">
+            <result property="dmId" column="dm_id" jdbcType="INTEGER"/>
+            <result property="defectName" column="defect_name" jdbcType="VARCHAR"/>
+            <result property="methodName" column="method_name" jdbcType="VARCHAR"/>
+            <result property="stdClassifiedId" column="std_classified_id" jdbcType="INTEGER"/>
+            <result property="runScript" column="run_script" jdbcType="VARCHAR"/>
+            <result property="runArgs" column="run_args" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        dm_id,defect_name,method_name,
+        std_classified_id,run_script,run_args
+    </sql>
+
+    <resultMap id="DefectItemMap" type="com.pray.entity.DefectMethod">
+        <result column="DM_ID" property="dmId" jdbcType="DECIMAL"/>
+        <result column="DEFECT_NAME" property="defectName" jdbcType="VARCHAR"/>
+        <result column="METHOD_NAME" property="methodName" jdbcType="VARCHAR"/>
+        <result column="STD_CLASSIFIED_ID" property="stdClassifiedId" jdbcType="DECIMAL"/>
+        <result column="RUN_SCRIPT" property="runScript" jdbcType="VARCHAR"/>
+        <result column="RUN_ARGS" property="runArgs" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getQcMethodItems" resultMap="DefectItemMap">
+        select dm_id,defect_name,method_name,
+               std_classified_id,run_script,run_args from tb_defect_method;
+    </select>
+
+</mapper>
