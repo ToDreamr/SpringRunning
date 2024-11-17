@@ -2,6 +2,7 @@ package com.pray.service;
 
 import com.pray.entity.DefectMethod;
 import com.pray.mapper.DefectMethodMapper;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
@@ -20,9 +21,9 @@ import java.util.logging.Logger;
  */
 @Slf4j
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class DefectMethodQcService {
-    @Autowired
+
     private DefectMethodMapper qcBizMapper;
 
     public void yellTheWorldSomeThing(String args, DefectMethod methodItem){
