@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @author 春江花朝秋月夜
  * @since 2024/7/12 15:21
  */
-@Component
+//@Component
 @Slf4j
 public class RedisPreProcess implements InitializingBean, BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, BeanPostProcessor,DisposableBean {
     //缓存预热处理，通过预先调查用户热数据，先自查询一次，写入缓存中，避免冷启动每次查询都走DB给数据库带来巨大压力
