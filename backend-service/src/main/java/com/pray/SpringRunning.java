@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,7 +14,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
  * @author Rainy-Heights
  */
 @EnableWebSecurity
-@SpringBootApplication
+@SpringBootApplication(
+//        exclude = {
+//                RedisAutoConfiguration.class,
+//                RedisRepositoriesAutoConfiguration.class
+//        }
+)
 @MapperScan(basePackages = "com.pray.mapper")
 @Slf4j
 public class SpringRunning {

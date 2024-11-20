@@ -1,6 +1,6 @@
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.pray.BackendBaseApplication;
+import com.pray.SpringRunning;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,7 +19,7 @@ import java.util.Arrays;
  * @author 春江花朝秋月夜
  * @since 2023/11/4 16:44
  */
-@SpringBootTest(classes = BackendBaseApplication.class)
+@SpringBootTest(classes = SpringRunning.class)
 @ComponentScan(basePackages = "com.pray.*")
 public class PrayApplicationTest {
     private static final DateTimeFormatter timeFormatter=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

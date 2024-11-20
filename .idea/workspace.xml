@@ -7,16 +7,19 @@
     <option name="showSidePanel" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:Nov.8">
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/common/DbOperateLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/common/PrayThreadPoolExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/MybatisCustomInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:Nov.17">
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/gitlab/FileFetchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/gitlab/FileFetchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/gitlab/PlaceholderUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/gitlab/PrefixConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/test/java/GitLabTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/cache/RedisPreProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/cache/RedisPreProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/DefectMethodQcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/service/DefectMethodQcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/SpringRunning.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/SpringRunning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/RedissonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/RedissonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/test/java/PrayApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/test/java/PrayApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +51,15 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
+        <option name="localRepository" value="D:\Maven-Repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../Program Files/apache-maven-3.9.4" />
+        <option name="userSettingsFile" value="D:\Program Files\apache-maven-3.9.4\conf\settings.xml" />
       </MavenGeneralSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="native" />
+      </list>
     </option>
   </component>
   <component name="MavenRunner">
@@ -85,7 +95,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.35172415&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;35c2d6c6f0341cdac928d0e69be3296d&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\DevelopENV\\IntelliJ IDEA 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -106,6 +116,9 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.pray.gitlab" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\service" />
       <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\entity\po" />
@@ -135,7 +148,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringRunning">
+  <component name="RunManager" selected="JUnit.GitLabTest.testFetchFileContent">
+    <configuration name="GitLabTest.testFetchFileContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GitLabTest" />
+      <option name="METHOD_NAME" value="testFetchFileContent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="redis" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
@@ -166,6 +189,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GitLabTest.testFetchFileContent" />
         <item itemvalue="Spring Boot.SpringRunning" />
       </list>
     </recent_temporary>
@@ -277,6 +301,14 @@
       <workItem from="1731152573069" duration="769000" />
       <workItem from="1731153576977" duration="1088000" />
       <workItem from="1731155057121" duration="6718000" />
+      <workItem from="1731849777818" duration="1617000" />
+      <workItem from="1731998776868" duration="4667000" />
+      <workItem from="1732005064212" duration="2159000" />
+      <workItem from="1732007934213" duration="163000" />
+      <workItem from="1732009177277" duration="415000" />
+      <workItem from="1732009941935" duration="234000" />
+      <workItem from="1732010296551" duration="63000" />
+      <workItem from="1732103626302" duration="2525000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -302,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731052368577</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat:Nov.17">
+      <option name="closed" value="true" />
+      <created>1731850061711</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731850061711</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +359,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev" />
+                        <option value="github/dev" />
                       </list>
                     </value>
                   </entry>
@@ -340,7 +380,8 @@
     </ignored-roots>
     <MESSAGE value="init" />
     <MESSAGE value="feat:Nov.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:Nov.8" />
+    <MESSAGE value="feat:Nov.17" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:Nov.17" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/backend_base$SecurityApplication.ic" NAME="SecurityApplication 覆盖结果" MODIFIED="1724871844418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
