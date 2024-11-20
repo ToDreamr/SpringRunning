@@ -9,8 +9,11 @@ import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
+import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -40,8 +43,15 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(conf->conf.requestMatchers("/**").anonymous())
+//                .authorizeHttpRequests(new Customizer<AuthorizeHttpRequestsConfigurer<org.springframework.security.config.annotation.web.builders.HttpSecurity>.AuthorizationManagerRequestMatcherRegistry>() {
+//                    @Override
+//                    public void customize(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry authorizationManagerRequestMatcherRegistry) {
+//
+//                    }
+//                })
                 .formLogin
-                        (conf->conf.loginProcessingUrl("/auth/login").permitAll()
+                        (
+                                conf->conf.loginProcessingUrl("/auth/login").permitAll()
                                 .failureHandler((request, response, exception) -> {
                                     response.getWriter().write(Result.fail(401,"登录失败").JsonResult());
                                 })
@@ -54,6 +64,12 @@ public class SecurityConfig {
                                     stringRedisTemplate.opsForValue().setIfAbsent(loginUser.getUsername(),String.valueOf(authorizeVO));
                                     response.getWriter().write(Result.ok(authorizeVO).JsonResult());
                                 })
-                ).build();
+//                                new Customizer<FormLoginConfigurer<HttpSecurity>>() {
+//                                    @Override
+//                                    public void customize(FormLoginConfigurer<HttpSecurity> httpSecurityFormLoginConfigurer) {
+//
+//                                    }
+//                                }
+                        ).build();
     }
 }

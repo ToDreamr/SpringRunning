@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.rain</groupId>
+    <groupId>com.pray</groupId>
     <artifactId>SpringRunning</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -17,6 +17,7 @@
     <modules>
         <module>backend-service</module>
         <module>backend-generator</module>
+        <module>backend-maven-plugin</module>
     </modules>
 
     <dependencyManagement>
@@ -187,17 +188,6 @@
             <url>file:////D:/Maven-Repository</url>
         </repository>
     </repositories>
-
-    <!--打包的插件-->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
