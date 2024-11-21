@@ -48,11 +48,7 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.16.1</version>
-        </dependency>
+
         <!--这就是那个打印了一堆日志的那个依赖，不知道在干嘛-->
         <dependency>
             <groupId>ch.qos.logback</groupId>

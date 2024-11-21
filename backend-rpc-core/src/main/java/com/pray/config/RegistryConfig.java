@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 public class RegistryConfig {
     private String registry = RegistryKey.getRegistryKeyType();
-    private String address = "http://127.0.0.1:2181";
+    private String address = "127.0.0.1:2181";
 
     /**
      * 用户名

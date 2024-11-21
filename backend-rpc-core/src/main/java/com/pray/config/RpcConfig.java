@@ -22,6 +22,7 @@ public class RpcConfig {
      * 版本号
      */
     private String version = "1.0";
+    //todo 实现配置文件传入具体的配置项
 
     /**
      * 服务器主机
@@ -31,7 +32,7 @@ public class RpcConfig {
     /**
      * 服务器端口
      */
-    private int serverPort = 8080;
+    private int serverPort = 8081;
     /**
      * 序列化器
      */
