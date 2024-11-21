@@ -39,7 +39,6 @@ public class RpcApplication {
                 if (rpcConfig == null) {
                     init();
                 }
-
             }
         }
         return rpcConfig;

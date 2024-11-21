@@ -7,15 +7,15 @@
     <option name="showSidePanel" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:Nov.21-rpc">
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/provider/RpcApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/provider/SimpleNettyProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/server/AbstractRpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/server/NettyServer.java" afterDir="false" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:implement a simple registry client for zookeeper and a method used netty">
+      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/build/BuilderV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/build/ClosureTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/build/GeneralBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/build/NormalBuild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/seal/SealedClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/seal/SensitiveWordCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/config/RegistryConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/config/RegistryConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/request/ServiceMetaInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/request/ServiceMetaInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/provider/RpcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/provider/RpcApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +28,8 @@
         <option value="HTML File" />
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -148,13 +148,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.SimpleNettyProvider">
-    <configuration name="MethodTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.MethodTest" />
-      <module name="backend-service" />
+  <component name="RunManager" selected="应用程序.GeneralBuilder">
+    <configuration name="ClosureTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.build.ClosureTest" />
+      <module name="backend-maven-plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pray.func.*" />
+          <option name="PATTERN" value="com.pray.build.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,12 +162,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.server.NettyServer" />
-      <module name="backend-rpc-core" />
+    <configuration name="ClosureTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.build.ClosureTest" />
+      <module name="backend-maven-plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pray.server.*" />
+          <option name="PATTERN" value="com.pray.build.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -175,12 +175,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.registry.RegistryTest" />
-      <module name="backend-rpc-core" />
+    <configuration name="GeneralBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.build.GeneralBuilder" />
+      <module name="backend-maven-plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pray.registry.*" />
+          <option name="PATTERN" value="com.pray.build.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NormalBuild" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.build.NormalBuild" />
+      <module name="backend-maven-plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pray.build.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -201,22 +214,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend-rpc-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pray.registry.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.pray.registry" />
-      <option name="MAIN_CLASS_NAME" value="com.pray.registry.RegistryTest" />
-      <option name="METHOD_NAME" value="register" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="redis" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
@@ -233,20 +230,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.RegistryTest.register" />
       <item itemvalue="Shell Script.redis" />
-      <item itemvalue="应用程序.NettyServer" />
-      <item itemvalue="应用程序.RegistryTest" />
+      <item itemvalue="应用程序.ClosureTest" />
+      <item itemvalue="应用程序.ClosureTest (1)" />
+      <item itemvalue="应用程序.GeneralBuilder" />
+      <item itemvalue="应用程序.NormalBuild" />
       <item itemvalue="应用程序.SimpleNettyProvider" />
-      <item itemvalue="应用程序.MethodTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.GeneralBuilder" />
+        <item itemvalue="应用程序.NormalBuild" />
+        <item itemvalue="应用程序.ClosureTest (1)" />
+        <item itemvalue="应用程序.ClosureTest" />
         <item itemvalue="应用程序.SimpleNettyProvider" />
-        <item itemvalue="应用程序.NettyServer" />
-        <item itemvalue="JUnit.RegistryTest.register" />
-        <item itemvalue="应用程序.RegistryTest" />
-        <item itemvalue="应用程序.MethodTest" />
       </list>
     </recent_temporary>
   </component>
@@ -367,7 +364,7 @@
       <workItem from="1732103626302" duration="2525000" />
       <workItem from="1732107150630" duration="1217000" />
       <workItem from="1732108377155" duration="12926000" />
-      <workItem from="1732170999992" duration="13149000" />
+      <workItem from="1732170999992" duration="18665000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -441,7 +438,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732181835985</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat:implement a simple registry client for zookeeper and a method used netty">
+      <option name="closed" value="true" />
+      <created>1732184536110</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732184536110</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +489,8 @@
     <MESSAGE value="feat:Nov.20" />
     <MESSAGE value="feat:Nov.21" />
     <MESSAGE value="feat:Nov.21-rpc" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:Nov.21-rpc" />
+    <MESSAGE value="feat:implement a simple registry client for zookeeper and a method used netty" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:implement a simple registry client for zookeeper and a method used netty" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
