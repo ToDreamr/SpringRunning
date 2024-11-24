@@ -19,6 +19,7 @@
         <module>backend-generator</module>
         <module>backend-maven-plugin</module>
         <module>backend-rpc-core</module>
+        <module>backend-mybatis-core</module>
     </modules>
 
     <dependencyManagement>

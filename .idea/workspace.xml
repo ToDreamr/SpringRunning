@@ -7,11 +7,28 @@
     <option name="showSidePanel" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:implement a general builder mode.">
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/server/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:implement an auto config file reader.">
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/MybatisInstanceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/MybatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/XmlResolve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/entity/DefectMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/resources/mapper/DefectMethodMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/resources/md/如何读取resource中的文件.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/resources/xml/boy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/resources/xml/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/output.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/func/AbstractGeneralConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/func/AbstractGeneralConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-rpc-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +98,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/JavaWork/RuoYi-Vue-3.0",
+    "last_opened_file_path": "D:/SpringRunning/backend-mybatis-core/src/main/resources/mapper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,11 +133,11 @@
       <recent name="com.pray.gitlab" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SpringRunning\backend-mybatis-core\src\main\resources\mapper" />
+      <recent name="D:\SpringRunning\backend-rpc-core\src\main\resources" />
       <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\service" />
       <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\entity\po" />
       <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\mapper" />
-      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray" />
-      <recent name="D:\SpingRunning\backend-service\src\main\java\com\pray\service\impl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SpringRunning\backend-maven-plugin\src\main\java" />
@@ -130,11 +147,11 @@
       <recent name="D:\demo-all\backend-base\doc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pray.mybatis.entity" />
       <recent name="com.pray.entity.po" />
       <recent name="com.pray.entity.vo.response" />
       <recent name="com.pray.controller" />
       <recent name="com.pray.entity.vo.request" />
-      <recent name="com.pray.common" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,20 +161,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.GeneralBuilder">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.server.Client" />
-      <module name="backend-rpc-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pray.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="应用程序.MybatisInstanceTest">
     <configuration name="GeneralBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pray.build.GeneralBuilder" />
       <module name="backend-maven-plugin" />
@@ -184,12 +188,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.server.NettyServer" />
-      <module name="backend-rpc-core" />
+    <configuration name="MybatisInstanceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.mybatis.MybatisInstanceTest" />
+      <module name="backend-mybatis-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pray.server.*" />
+          <option name="PATTERN" value="com.pray.mybatis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -197,18 +201,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.util.Test" />
       <module name="backend-rpc-core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.pray.registry.*" />
+          <option name="PATTERN" value="com.pray.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.pray.registry" />
-      <option name="MAIN_CLASS_NAME" value="com.pray.registry.RegistryTest" />
-      <option name="METHOD_NAME" value="register" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XmlResolve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.mybatis.XmlResolve" />
+      <module name="backend-mybatis-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pray.mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -228,21 +242,29 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="SpringRunning" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="backend-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.pray.SpringRunning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.RegistryTest.register" />
       <item itemvalue="Shell Script.redis" />
+      <item itemvalue="Spring Boot.SpringRunning" />
+      <item itemvalue="应用程序.MybatisInstanceTest" />
+      <item itemvalue="应用程序.Test" />
+      <item itemvalue="应用程序.XmlResolve" />
       <item itemvalue="应用程序.LoadEnvUtil" />
-      <item itemvalue="应用程序.Client" />
-      <item itemvalue="应用程序.NettyServer" />
       <item itemvalue="应用程序.GeneralBuilder" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.GeneralBuilder" />
-        <item itemvalue="JUnit.RegistryTest.register" />
+        <item itemvalue="应用程序.MybatisInstanceTest" />
         <item itemvalue="应用程序.LoadEnvUtil" />
-        <item itemvalue="应用程序.Client" />
-        <item itemvalue="应用程序.NettyServer" />
+        <item itemvalue="应用程序.Test" />
+        <item itemvalue="应用程序.XmlResolve" />
+        <item itemvalue="应用程序.GeneralBuilder" />
       </list>
     </recent_temporary>
   </component>
@@ -367,6 +389,9 @@
       <workItem from="1732205807849" duration="1541000" />
       <workItem from="1732269228088" duration="690000" />
       <workItem from="1732348412754" duration="5858000" />
+      <workItem from="1732359268341" duration="9509000" />
+      <workItem from="1732432792323" duration="1078000" />
+      <workItem from="1732434789843" duration="1671000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -456,7 +481,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732200755046</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat:implement an auto config file reader.">
+      <option name="closed" value="true" />
+      <created>1732360363828</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732360363828</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +534,8 @@
     <MESSAGE value="feat:Nov.21-rpc" />
     <MESSAGE value="feat:implement a simple registry client for zookeeper and a method used netty" />
     <MESSAGE value="feat:implement a general builder mode." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:implement a general builder mode." />
+    <MESSAGE value="feat:implement an auto config file reader." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:implement an auto config file reader." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

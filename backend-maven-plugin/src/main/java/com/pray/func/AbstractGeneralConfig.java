@@ -8,6 +8,7 @@ package com.pray.func;
  */
 public abstract class AbstractGeneralConfig<T> {
     public String[] distribution;
+    public T config;
     public abstract GeneralConfig addConfig(InnerConfig<T> config,String[] distribution);
     private T getSelf() {
         return (T) this;

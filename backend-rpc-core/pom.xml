@@ -54,6 +54,14 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+
+        <!--支持yaml配置文件的读取工具包-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.12.5</version>
+        </dependency>
+
     </dependencies>
 
     <!--打包插件-->

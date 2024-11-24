@@ -4,12 +4,12 @@ package com.pray.util;
 import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.io.resource.NoResourceException;
 import cn.hutool.core.io.resource.Resource;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * LoadEnvUtil
@@ -23,12 +23,17 @@ public class LoadEnvUtil {
         Properties properties = new Properties();
         loadAllEnv(properties,DEFAULT_FILE_NAME);
         properties.entrySet().forEach(System.out::println);
+        yamlMapConfig.entrySet().forEach(System.out::println);
+        ymlMapConfig.entrySet().forEach(System.out::println);
     }
     private static String DEFAULT_FILE_NAME = "application";
 
+    private final static ObjectMapper yamlMapper = new ObjectMapper(new YAMLFactory());
     public static void setDefaultFileName(String defaultFileName) {
         DEFAULT_FILE_NAME = defaultFileName;
     }
+    private static Map<String, Object> ymlMapConfig = new HashMap<>();
+    private static Map<String, Object> yamlMapConfig = new HashMap<>();
 
     public LoadEnvUtil() {
     }
@@ -36,6 +41,12 @@ public class LoadEnvUtil {
         loadAllEnv(pro,DEFAULT_FILE_NAME);
     }
 
+    /**
+     * 加载所有的配置信息
+     * @param pro
+     * @param fileName
+     * @throws IOException
+     */
     private static void loadAllEnv(Properties pro, String fileName) throws IOException {
         loadAllEnv(pro,fileName,(String)null);
     }
@@ -60,7 +71,7 @@ public class LoadEnvUtil {
                 if ("properties".equals(envSuffix)){
                     loadProRes((Resource[])resources.toArray(new Resource[0]),pro);
                 }else{
-                    loadYmlRes((Resource[])resources.toArray(new Resource[0]),pro);
+                    loadYmlRes((Resource[])resources.toArray(new Resource[0]),envSuffix);
                 }
             }catch (NoResourceException e){
                 //没找到对应的配置文件，啥也不用干
@@ -68,13 +79,19 @@ public class LoadEnvUtil {
         }
     }
 
-    private static void loadYmlRes(Resource[] resources,Properties properties) {
+    @SuppressWarnings("uncheck")
+    private static void loadYmlRes(Resource[] resources,String envSuffix) throws IOException {
         if (resources != null && resources.length > 0) {
             Resource[] param = resources;
             for (int i = 0; i < param.length; i++) {
                 Resource currentRes = resources[i];
                 if(currentRes.getName()!=null){
-                    //TODO YAML文件配置的读取
+                    InputStream ins = currentRes.getStream();
+                    Map<String, Object> data = yamlMapper.readValue(ins, Map.class);
+                    if (envSuffix.equals("yaml")){
+                        yamlMapConfig.putAll(data);
+                    }
+                    ymlMapConfig.putAll(data);
                 }
             }
         }
