@@ -13,6 +13,14 @@ import java.io.Serializable;
 public class DefectMethod implements Serializable {
 
     /**
+     * 存在多个构造方法，而Mybatis不知道该如何选择，那么就会告诉我们找不到合适的构造方法，要解决这种问题也很简单，
+     * 我们不需要删除这些多余的构造方法，只需添加一个无参构造或是全参构造即可
+     */
+    public DefectMethod() {
+        System.out.println("Mybatis将会使用实体的无参构造方法进行反射构造填充数据");
+    }
+
+    /**
     * 方法ID
     */
     private Integer dmId;

@@ -18,8 +18,9 @@ public class MybatisInstanceTest {
         //使用build方法来创建SqlSessionFactory，这里我们通过文件输入流传入配置文件
         SqlSession sqlSession = MybatisUtils.openSession(true);
 
-//        List<Object> getQcMethodItems = sqlSession.selectList("selectQcMethodItemsById",1);
-        Map<String, Object> getQcMethodItems= sqlSession.selectOne("selectQcMethodItemsById",1);
-        getQcMethodItems.entrySet().forEach(System.out::println);
+        List<Object> getQcMethodItems = sqlSession.selectList("selectQcMethodItemsById",1);
+//        Map<String, Object> getQcMethodItems= sqlSession.selectOne("selectQcMethodItemsById",1);
+        getQcMethodItems.forEach(System.out::println);
+
     }
 }
