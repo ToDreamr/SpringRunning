@@ -37,6 +37,18 @@ spring:
     password: ${backend.datasource.password}
     username: ${backend.datasource.username}
     driver-class-name: ${backend.datasource.driver-class-name}
+  task:
+    scheduling:
+      # 任务调度线程池大小，因为要开线程异步，最多能开几个线程？，默认 1
+      pool:
+        size: 2
+      # 调度线程名称前缀 默认 scheduling-，程序线程一多，不好找，加了它可读性高
+      thread-name-prefix: scheduling-kt
+      shutdown:
+        # 线程池关闭时，是否等待所有任务完成
+        await-termination: false
+        # 调度线程关闭前最大等待时间，确保最后一定关闭（如果等待，最多等几秒）
+        await-termination-period: 10s
 logging:
   pattern:
     dateformat: HH:mm:ss

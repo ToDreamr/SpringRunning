@@ -51,6 +51,13 @@ public class LoadEnvUtil {
         loadAllEnv(pro,fileName,(String)null);
     }
 
+    /**
+     * 加载所有的配置文件
+     * @param pro
+     * @param fileName
+     * @param includeName
+     * @throws IOException
+     */
     private static void loadAllEnv(Properties pro, String fileName, String includeName) throws IOException {
         //文件后缀名
         String[] envSuffixes = new String[]{"yaml", "yml", "properties"};

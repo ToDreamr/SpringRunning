@@ -8,11 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:some lab experiment of stream">
-      <change afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/stream/CharSetCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/IOStreamResolve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/SystemResolve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/resources/md/如何读取resource中的文件-副本.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SpringTaskCornConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/ThreadScheduledTaskConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/stream/ListStreamFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/stream/ListStreamFunc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/MybatisInstanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/MybatisInstanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/entity/DefectMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/entity/DefectMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-mybatis-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-mybatis-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/SpringRunning.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/SpringRunning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +61,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/../DevelopENV/JDK17/lib/src.zip!/java.base/java/lang/ArrayIndexOutOfBoundsException.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$PROJECT_DIR$/../DevelopENV/JDK17/lib/src.zip!/java.base/java/util/UUID.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$PROJECT_DIR$/../Maven-Repository/org/mybatis/mybatis/3.5.16/mybatis-3.5.16.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$PROJECT_DIR$/../Maven-Repository/org/springframework/spring-web/6.0.11/spring-web-6.0.11-sources.jar!/org/springframework/web/filter/OncePerRequestFilter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/backend-maven-plugin/src/main/java/com/pray/stream/ListStreamFunc.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/backend-service/src/main/java/com/pray/entity/DefectMethod.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -107,7 +110,7 @@
     "git-widget-placeholder": "dev",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/KtWork",
+    "last_opened_file_path": "D:/Work/JavaWork/MavenLibrary",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,13 +119,16 @@
     "project.structure.last.edited": "项目",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35172415",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "preferences.rainbow.brackets.color",
     "spring.configuration.checksum": "35c2d6c6f0341cdac928d0e69be3296d",
     "ts.external.directory.path": "D:\\DevelopENV\\IntelliJ IDEA 2023.1.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true",
     "应用程序.CharSetCheck.executor": "Run",
+    "应用程序.IOStreamResolve.executor": "Run",
     "应用程序.ListStreamFunc.executor": "Run",
-    "应用程序.MybatisInstanceTest.executor": "Run"
+    "应用程序.LoadEnvUtil.executor": "Run",
+    "应用程序.MybatisInstanceTest.executor": "Run",
+    "应用程序.SystemResolve.executor": "Run"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -173,13 +179,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.CharSetCheck">
+  <component name="RunManager" selected="Spring Boot.SpringRunning">
     <configuration name="CharSetCheck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pray.stream.CharSetCheck" />
       <module name="backend-maven-plugin" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.pray.stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IOStreamResolve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.mybatis.IOStreamResolve" />
+      <module name="backend-mybatis-core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pray.mybatis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -200,21 +219,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MybatisInstanceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.mybatis.MybatisInstanceTest" />
-      <module name="backend-mybatis-core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pray.mybatis.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.util.Test" />
+    <configuration name="LoadEnvUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.util.LoadEnvUtil" />
       <module name="backend-rpc-core" />
       <extension name="coverage">
         <pattern>
@@ -226,8 +232,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlResolve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.mybatis.XmlResolve" />
+    <configuration name="SystemResolve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.mybatis.SystemResolve" />
       <module name="backend-mybatis-core" />
       <extension name="coverage">
         <pattern>
@@ -264,19 +270,19 @@
     <list>
       <item itemvalue="Shell Script.redis" />
       <item itemvalue="Spring Boot.SpringRunning" />
+      <item itemvalue="应用程序.LoadEnvUtil" />
+      <item itemvalue="应用程序.IOStreamResolve" />
+      <item itemvalue="应用程序.SystemResolve" />
       <item itemvalue="应用程序.CharSetCheck" />
       <item itemvalue="应用程序.ListStreamFunc" />
-      <item itemvalue="应用程序.MybatisInstanceTest" />
-      <item itemvalue="应用程序.Test" />
-      <item itemvalue="应用程序.XmlResolve" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.CharSetCheck" />
+        <item itemvalue="应用程序.SystemResolve" />
+        <item itemvalue="应用程序.LoadEnvUtil" />
         <item itemvalue="应用程序.ListStreamFunc" />
-        <item itemvalue="应用程序.MybatisInstanceTest" />
-        <item itemvalue="应用程序.XmlResolve" />
-        <item itemvalue="应用程序.Test" />
+        <item itemvalue="应用程序.IOStreamResolve" />
+        <item itemvalue="应用程序.CharSetCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -425,6 +431,12 @@
       <workItem from="1732712902323" duration="13424000" />
       <workItem from="1732871425486" duration="309000" />
       <workItem from="1732879547270" duration="1210000" />
+      <workItem from="1732902864785" duration="1172000" />
+      <workItem from="1733312320840" duration="3725000" />
+      <workItem from="1733316134522" duration="1443000" />
+      <workItem from="1733745559285" duration="1447000" />
+      <workItem from="1733747052076" duration="181000" />
+      <workItem from="1733747249063" duration="3149000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -555,7 +567,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="github/dev" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
