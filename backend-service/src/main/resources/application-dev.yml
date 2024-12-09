@@ -1,6 +1,8 @@
 server:
   port: 9201
   shutdown: graceful
+  servlet:
+    context-path: "/api"
 file:
   ip: localhost
 spring:

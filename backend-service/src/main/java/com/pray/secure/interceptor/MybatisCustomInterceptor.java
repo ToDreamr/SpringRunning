@@ -21,6 +21,7 @@ import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -28,7 +29,7 @@ import java.util.regex.Matcher;
 
 /**
  * MybatisCustomInterceptor
- *
+ * 自定义的获取Mybatis请求中的SQL
  * @author Cotton Eye Joe
  * @since 2024/11/9 20:26
  */
@@ -81,6 +82,7 @@ public class MybatisCustomInterceptor implements Interceptor {
         String sql = boundSql.getSql();
         sql = sql.replace("\n", " ");
         Object parameterObject = boundSql.getParameterObject();
+        //传入的SQl参数
         List<ParameterMapping> parameterMappings = boundSql.getParameterMappings();
         if (!CollectionUtils.isEmpty(parameterMappings) && parameterObject != null) {
             Iterator mappingIterator = parameterMappings.iterator();
@@ -102,6 +104,19 @@ public class MybatisCustomInterceptor implements Interceptor {
                     sql = sql.replaceFirst("\\?", Matcher.quoteReplacement(this.getParameter(value)));
                 }
             }
+        }
+        if (!CollectionUtils.isEmpty(parameterMappings)){
+            Iterator<ParameterMapping> iterator = parameterMappings.iterator();
+
+            while(iterator.hasNext()) {
+                ParameterMapping parameterMapping = iterator.next();
+                String propertyName = parameterMapping.getProperty();
+
+                //todo 增加获取参数逻辑
+                Object value = propertyName;
+                sql = sql.replaceFirst("\\?", Matcher.quoteReplacement(this.getParameter(value)));
+            }
+
         }
         return sql;
     }

@@ -7,17 +7,12 @@
     <option name="showSidePanel" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:some lab experiment of stream">
-      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/IOStreamResolve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/java/com/pray/mybatis/SystemResolve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-mybatis-core/src/main/resources/md/如何读取resource中的文件-副本.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SpringTaskCornConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/ThreadScheduledTaskConfig.java" afterDir="false" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:some lab experiment of springtask">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-mybatis-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-mybatis-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/java/com/pray/util/LoadEnvUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend-rpc-core/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/SpringRunning.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/SpringRunning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SpringTaskCornConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/SpringTaskCornConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/MybatisCustomInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/MybatisCustomInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/WebMvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -436,7 +431,8 @@
       <workItem from="1733316134522" duration="1443000" />
       <workItem from="1733745559285" duration="1447000" />
       <workItem from="1733747052076" duration="181000" />
-      <workItem from="1733747249063" duration="3149000" />
+      <workItem from="1733747249063" duration="5450000" />
+      <workItem from="1733755758096" duration="6777000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -550,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732795722744</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat:some lab experiment of springtask">
+      <option name="closed" value="true" />
+      <created>1733750844444</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733750844444</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,9 +601,19 @@
     <MESSAGE value="feat:implement a general builder mode." />
     <MESSAGE value="feat:implement an auto config file reader." />
     <MESSAGE value="feat:some lab experiment of stream" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:some lab experiment of stream" />
+    <MESSAGE value="feat:some lab experiment of springtask" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:some lab experiment of springtask" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/interceptor/MybatisCustomInterceptor.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.apache.curator.x.discovery.details.ServiceDiscoveryImpl" memberName="client" />

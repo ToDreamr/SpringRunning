@@ -49,14 +49,14 @@ public class SpringTaskCornConfig  {
             public void run() {
                 System.out.println(Thread.currentThread().getName());
             }
-        },"0/5 * * * * ?");
+        },"0 * 0/2 * * ?");
     }
 
     /**
      * 上一次任务执行完后，歇一秒，再执行下一轮
      * 执行一次任务耗时5秒
      */
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = 100000)
     public void task1() throws InterruptedException {
 
         System.out.println(Thread.currentThread().getName()
@@ -71,7 +71,7 @@ public class SpringTaskCornConfig  {
      * 下轮任务在上一轮任务开始后2秒执行.
      * 执行一次任务耗时可忽略
      */
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(fixedRate = 200000)
     public void task2() {
         System.out.println(Thread.currentThread().getName()
                 + "==>  spring task2 ==> "
