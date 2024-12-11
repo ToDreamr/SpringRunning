@@ -80,3 +80,54 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1898180612 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC COMMENT='用户表';
 
 
+explain
+select emp.emp_id, emp.dep_id, format(mids.avg, 2) as '平均工资'
+from employee emp
+         right join (select avg(employee.salary) avg, employee.dep_id from employee group by employee.dep_id) mids
+                    on mids.dep_id = emp.dep_id
+where emp.salary < mids.avg
+order by emp.dep_id;
+
+-- 使用窗口函数进行优化操作
+explain SELECT emp.emp_id,emp.name,
+               emp.dep_id,
+               FORMAT(avg_salary, 2) AS '平均工资'
+        FROM
+            (SELECT emp_id,
+                    dep_id,
+                    salary,
+                    name,
+                    AVG(salary) OVER (PARTITION BY dep_id) AS avg_salary
+             FROM employee
+            ) emp
+        WHERE emp.salary < emp.avg_salary
+        ORDER BY emp.dep_id ;
+
+select EMP.*,AVG(emp.salary) OVER (PARTITION BY dep_id) from employee emp order by EMP.emp_id;
+
+select emp.*, mid.avg
+from employee emp
+         join (select dep_id, avg(employee.salary) avg from employee group by employee.dep_id) mid
+              on emp.dep_id = mid.dep_id
+order by emp_id;
+
+explain select emp.emp_id,emp.dep_id from employee emp;
+
+-- 使用函数来获取确定精度的数字或者对数据进行转换：
+-- 使用cast函数强转换，convert函数，format函数，前两个只接受字符串
+
+explain select format(avg(employee.salary),2) avg, employee.dep_id from employee group by employee.dep_id;
+
+-- convert/cast函数是用来转换字符变成指定数据类型的数据
+select employee.dep_id from employee;
+
+-- 拼接字符串concat，group_concat,string_add,
+
+-- 普通查询，使用条件过滤
+# select e1.*
+             #  from employee e1
+      #  where e1.salary < (select avg(salary) from employee e2 where e1.dep_id = e2.dep_id)
+      #  order by dep_id;
+
+
+

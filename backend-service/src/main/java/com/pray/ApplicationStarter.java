@@ -6,7 +6,7 @@ package com.pray;
  * @author Cotton Eye Joe
  * @since 2024/11/20 22:15
  */
-public class MethodTest {
+public class ApplicationStarter {
     public static void say(String[] args){
         String constantsWords = "Just say something let us know that you are alive!";
         StringBuilder sb  = new StringBuilder(constantsWords);
