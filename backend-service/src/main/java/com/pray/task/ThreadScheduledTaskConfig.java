@@ -1,4 +1,4 @@
-package com.pray.config;
+package com.pray.task;
 
 import org.springframework.context.annotation.Bean;
 
@@ -20,6 +20,7 @@ public class ThreadScheduledTaskConfig {
         // 用来存入线程执行情况, 方便于停止定时任务时使用
         public static ConcurrentHashMap<String, ScheduledFuture> cache= new ConcurrentHashMap<String, ScheduledFuture>();
 
+        //@Schduled注解使用的线程池
         @Bean
         public ThreadPoolTaskScheduler threadPoolTaskScheduler(){
             ThreadPoolTaskScheduler threadPoolTaskScheduler = new ThreadPoolTaskScheduler();

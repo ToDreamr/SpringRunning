@@ -247,6 +247,12 @@
             <version>3.5.13</version>
             <scope>compile</scope>
         </dependency>
+
+        <!--应用启动的原理-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-loader</artifactId>
+        </dependency>
     </dependencies>
 
     <repositories>

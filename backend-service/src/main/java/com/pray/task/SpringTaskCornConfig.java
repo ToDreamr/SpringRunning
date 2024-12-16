@@ -1,8 +1,9 @@
-package com.pray.config;
+package com.pray.task;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
@@ -10,6 +11,11 @@ import org.springframework.scheduling.support.CronTrigger;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * SpringTaskCornConfig
@@ -18,7 +24,7 @@ import java.time.format.DateTimeFormatter;
  * @since 2024/12/9 下午8:30
  */
 @Configuration
-public class SpringTaskCornConfig  {
+public class SpringTaskCornConfig  implements ApplicationRunner {
     //非必须，看自己需求
 //    @Bean
 //    public ThreadPoolTaskExecutor taskExecutor() {
@@ -37,6 +43,8 @@ public class SpringTaskCornConfig  {
 
     @Autowired
     private ThreadPoolTaskScheduler threadPoolTaskScheduler;
+    @Autowired
+    private TaskRegistry taskRegistry;
 
     public void updateRunnable(Runnable r,String corn){
         threadPoolTaskScheduler.schedule(r,new CronTrigger(corn));
@@ -56,14 +64,12 @@ public class SpringTaskCornConfig  {
      * 上一次任务执行完后，歇一秒，再执行下一轮
      * 执行一次任务耗时5秒
      */
-    @Scheduled(fixedDelay = 100000)
     public void task1() throws InterruptedException {
 
         System.out.println(Thread.currentThread().getName()
                 + "==>  spring task 1 ==> "
                 + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS"))
         );
-
         Thread.sleep(5000);
     }
 
@@ -71,11 +77,35 @@ public class SpringTaskCornConfig  {
      * 下轮任务在上一轮任务开始后2秒执行.
      * 执行一次任务耗时可忽略
      */
-    @Scheduled(fixedRate = 200000)
     public void task2() {
         System.out.println(Thread.currentThread().getName()
                 + "==>  spring task2 ==> "
                 + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS"))
         );
+    }
+    public ScheduledFuture<?> addSchduledTasks() {
+        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
+        ScheduledFuture<?> task1 = executor.scheduleAtFixedRate(() -> {
+            try {
+                task1();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }, 0, 5000, TimeUnit.MILLISECONDS);
+        ScheduledFuture<?> task2 = executor.scheduleAtFixedRate(this::task2, 0, 10000, TimeUnit.MILLISECONDS);
+        taskRegistry.addScheduledFuture("task1", List.of(task1,task2));
+        return task1;
+    }
+    public void removeTask() {
+        taskRegistry.removeScheduledFuture("task1");
+    }
+
+    /**
+     * @param args incoming application arguments
+     * @throws Exception
+     */
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        addSchduledTasks();
     }
 }

@@ -52,10 +52,16 @@ spring:
         # 调度线程关闭前最大等待时间，确保最后一定关闭（如果等待，最多等几秒）
         await-termination-period: 10s
 logging:
-  pattern:
-    dateformat: HH:mm:ss
+  file:
+    path: ${backend.log.file-path}
+  logback:
+    rollingpolicy:
+      max-file-size: ${backend.log.max-size}
+      max-history: ${backend.log.alive-time}
+#  config: classpath:log4j-conf.xml
+url: ${backend.url}
+
+mybatis-plus:
   global-config:
     db-config:
       table-prefix: tb_
-url: ${backend.url}
-

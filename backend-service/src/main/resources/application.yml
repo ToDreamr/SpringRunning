@@ -6,6 +6,7 @@ runner:
   schemaName: "spring_runner"
   tableName: "tb_user"
 backend:
+  vision: 1.0.2
   account: '春江花朝秋月夜'
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,3 +33,7 @@ backend:
 #    host: "192.168.74.129"
     host: "127.0.0.1"
     port: 6379
+  log:
+    file-path: ./log
+    max-size: 5MB
+    alive-time: 2

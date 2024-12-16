@@ -42,7 +42,7 @@ public class PrayApplicationTest {
     @Test
     public void resource() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(URLClassLoader.
-                getSystemResource("custom-mail.html").getFile()));
+                getSystemResource("html/custom-mail.html").getFile()));
         while (reader.readLine()!=null){
             System.out.println(reader.readLine());
         }

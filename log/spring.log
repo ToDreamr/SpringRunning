@@ -1,0 +1,118 @@
+2024-12-16T22:20:39.919+08:00  INFO 24380 --- [main] com.pray.SpringRunning                   : Starting SpringRunning using Java 17.0.12 with PID 24380 (D:\Work\SpringRunning\backend-service\target\classes started by Rainy-Heights in D:\Work\SpringRunning)
+2024-12-16T22:20:39.921+08:00  INFO 24380 --- [main] com.pray.SpringRunning                   : The following 1 profile is active: "dev"
+2024-12-16T22:20:40.495+08:00  INFO 24380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-16T22:20:40.498+08:00  INFO 24380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-16T22:20:40.534+08:00  INFO 24380 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-12-16T22:20:41.275+08:00  INFO 24380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9201 (http)
+2024-12-16T22:20:41.283+08:00  INFO 24380 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T22:20:41.283+08:00  INFO 24380 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-12-16T22:20:41.352+08:00  INFO 24380 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-12-16T22:20:41.352+08:00  INFO 24380 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1391 ms
+2024-12-16T22:20:41.857+08:00  WARN 24380 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.DefectMethod".
+2024-12-16T22:20:41.861+08:00  WARN 24380 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.DefectMethod ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:20:42.039+08:00  WARN 24380 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Book".
+2024-12-16T22:20:42.039+08:00  WARN 24380 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Book ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:20:42.056+08:00  WARN 24380 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Borrow".
+2024-12-16T22:20:42.056+08:00  WARN 24380 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Borrow ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:20:42.098+08:00  WARN 24380 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.BookUser".
+2024-12-16T22:20:42.099+08:00  WARN 24380 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.BookUser ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:20:42.267+08:00  INFO 24380 --- [main] WebMvcConfig                             : addCorsMappings
+2024-12-16T22:20:42.419+08:00  INFO 24380 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73c09a98, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f2bf657, org.springframework.security.web.context.SecurityContextHolderFilter@52963839, org.springframework.security.web.header.HeaderWriterFilter@7ce4498f, org.springframework.security.web.authentication.logout.LogoutFilter@3d3b852e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1fa796a4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4866e0a7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@27d6467, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@399fd710, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51566ce0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bf1b528, org.springframework.security.web.access.ExceptionTranslationFilter@176e839e, org.springframework.security.web.access.intercept.AuthorizationFilter@53917c92]
+2024-12-16T22:20:42.666+08:00  INFO 24380 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9201 (http) with context path '/api'
+2024-12-16T22:20:42.674+08:00  INFO 24380 --- [main] com.pray.SpringRunning                   : Started SpringRunning in 3.398 seconds (process running for 3.863)
+2024-12-16T22:20:42.677+08:00  INFO 24380 --- [main] com.pray.SpringRunning                   : 当前运行环境：Java版本：17.0.12
+2024-12-16T22:20:44.720+08:00  INFO 24380 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-16T22:20:44.730+08:00  INFO 24380 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-16T22:20:44.737+08:00 ERROR 24380 --- [taskExecutor-2] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.lang.InterruptedException: sleep interrupted
+	at java.base/java.lang.Thread.sleep(Native Method) ~[na:na]
+	at com.pray.task.SpringTaskCornConfig.task1(SpringTaskCornConfig.java:67) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-6.0.11.jar:6.0.11]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-12-16T22:32:08.875+08:00  INFO 18172 --- [main] com.pray.SpringRunning                   : Starting SpringRunning using Java 17.0.12 with PID 18172 (D:\Work\SpringRunning\backend-service\target\classes started by Rainy-Heights in D:\Work\SpringRunning)
+2024-12-16T22:32:08.876+08:00  INFO 18172 --- [main] com.pray.SpringRunning                   : The following 1 profile is active: "dev"
+2024-12-16T22:32:09.471+08:00  INFO 18172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-16T22:32:09.473+08:00  INFO 18172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-16T22:32:09.502+08:00  INFO 18172 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-12-16T22:32:10.225+08:00  INFO 18172 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9201 (http)
+2024-12-16T22:32:10.232+08:00  INFO 18172 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T22:32:10.232+08:00  INFO 18172 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-12-16T22:32:10.295+08:00  INFO 18172 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-12-16T22:32:10.296+08:00  INFO 18172 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1374 ms
+2024-12-16T22:32:10.786+08:00  WARN 18172 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.DefectMethod".
+2024-12-16T22:32:10.789+08:00  WARN 18172 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.DefectMethod ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:32:10.966+08:00  WARN 18172 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Book".
+2024-12-16T22:32:10.966+08:00  WARN 18172 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Book ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:32:10.995+08:00  WARN 18172 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Borrow".
+2024-12-16T22:32:10.995+08:00  WARN 18172 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Borrow ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:32:11.047+08:00  WARN 18172 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.BookUser".
+2024-12-16T22:32:11.047+08:00  WARN 18172 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.BookUser ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:32:11.212+08:00  INFO 18172 --- [main] WebMvcConfig                             : addCorsMappings
+2024-12-16T22:32:11.369+08:00  INFO 18172 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a302f30, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1860b107, org.springframework.security.web.context.SecurityContextHolderFilter@5bf1b528, org.springframework.security.web.header.HeaderWriterFilter@73c09a98, org.springframework.security.web.authentication.logout.LogoutFilter@3909308c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50caeb4b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@259c6ab8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@744f0e0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c3b221f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dc120ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4136b193, org.springframework.security.web.access.ExceptionTranslationFilter@68de8522, org.springframework.security.web.access.intercept.AuthorizationFilter@90394d]
+2024-12-16T22:32:11.623+08:00  INFO 18172 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9201 (http) with context path '/api'
+2024-12-16T22:32:11.632+08:00  INFO 18172 --- [main] com.pray.SpringRunning                   : Started SpringRunning in 3.381 seconds (process running for 3.842)
+2024-12-16T22:32:11.636+08:00  INFO 18172 --- [main] com.pray.SpringRunning                   : 当前运行环境：Java版本：17.0.12
+2024-12-16T22:32:18.498+08:00  INFO 18172 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-16T22:32:18.508+08:00  INFO 18172 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-16T22:59:05.101+08:00  INFO 22304 --- [main] com.pray.SpringRunning                   : Starting SpringRunning using Java 17.0.12 with PID 22304 (D:\Work\SpringRunning\backend-service\target\classes started by Rainy-Heights in D:\Work\SpringRunning)
+2024-12-16T22:59:05.103+08:00  INFO 22304 --- [main] com.pray.SpringRunning                   : The following 1 profile is active: "dev"
+2024-12-16T22:59:05.713+08:00  INFO 22304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-16T22:59:05.716+08:00  INFO 22304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-16T22:59:05.749+08:00  INFO 22304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-12-16T22:59:06.485+08:00  INFO 22304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9201 (http)
+2024-12-16T22:59:06.492+08:00  INFO 22304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T22:59:06.493+08:00  INFO 22304 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-12-16T22:59:06.562+08:00  INFO 22304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-12-16T22:59:06.562+08:00  INFO 22304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1410 ms
+2024-12-16T22:59:07.061+08:00  WARN 22304 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.DefectMethod".
+2024-12-16T22:59:07.064+08:00  WARN 22304 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.DefectMethod ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:59:07.225+08:00  WARN 22304 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Book".
+2024-12-16T22:59:07.225+08:00  WARN 22304 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Book ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:59:07.240+08:00  WARN 22304 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Borrow".
+2024-12-16T22:59:07.240+08:00  WARN 22304 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Borrow ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:59:07.280+08:00  WARN 22304 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.BookUser".
+2024-12-16T22:59:07.280+08:00  WARN 22304 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.BookUser ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T22:59:07.444+08:00  INFO 22304 --- [main] WebMvcConfig                             : addCorsMappings
+2024-12-16T22:59:07.606+08:00  INFO 22304 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@44a9971f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e2cd42c, org.springframework.security.web.context.SecurityContextHolderFilter@5dd227b7, org.springframework.security.web.header.HeaderWriterFilter@dcdb883, org.springframework.security.web.authentication.logout.LogoutFilter@640a6d4b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6a562255, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1fa796a4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1cdad619, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14ba7f15, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f89ad03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@319058ce, org.springframework.security.web.access.ExceptionTranslationFilter@3340ff7c, org.springframework.security.web.access.intercept.AuthorizationFilter@185bf6e0]
+2024-12-16T22:59:07.866+08:00  INFO 22304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9201 (http) with context path '/api'
+2024-12-16T22:59:07.876+08:00  INFO 22304 --- [main] com.pray.SpringRunning                   : Started SpringRunning in 3.406 seconds (process running for 3.862)
+2024-12-16T22:59:07.879+08:00  INFO 22304 --- [main] com.pray.SpringRunning                   : 当前运行环境：Java版本：17.0.12
+2024-12-16T22:59:15.575+08:00  INFO 22304 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-16T22:59:15.586+08:00  INFO 22304 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-16T23:04:09.340+08:00  INFO 24444 --- [main] com.pray.SpringRunning                   : Starting SpringRunning using Java 17.0.12 with PID 24444 (D:\Work\SpringRunning\backend-service\target\classes started by Rainy-Heights in D:\Work\SpringRunning)
+2024-12-16T23:04:09.344+08:00  INFO 24444 --- [main] com.pray.SpringRunning                   : The following 1 profile is active: "dev"
+2024-12-16T23:04:10.006+08:00  INFO 24444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-16T23:04:10.008+08:00  INFO 24444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-16T23:04:10.045+08:00  INFO 24444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2024-12-16T23:04:10.817+08:00  INFO 24444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9201 (http)
+2024-12-16T23:04:10.825+08:00  INFO 24444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T23:04:10.825+08:00  INFO 24444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2024-12-16T23:04:10.889+08:00  INFO 24444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-12-16T23:04:10.889+08:00  INFO 24444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1497 ms
+2024-12-16T23:04:11.441+08:00  WARN 24444 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.DefectMethod".
+2024-12-16T23:04:11.444+08:00  WARN 24444 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.DefectMethod ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T23:04:11.619+08:00  WARN 24444 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Book".
+2024-12-16T23:04:11.619+08:00  WARN 24444 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Book ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T23:04:11.636+08:00  WARN 24444 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.Borrow".
+2024-12-16T23:04:11.637+08:00  WARN 24444 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.Borrow ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T23:04:11.677+08:00  WARN 24444 --- [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.pray.entity.po.BookUser".
+2024-12-16T23:04:11.678+08:00  WARN 24444 --- [main] c.b.m.core.injector.DefaultSqlInjector   : class com.pray.entity.po.BookUser ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-12-16T23:04:11.866+08:00  INFO 24444 --- [main] WebMvcConfig                             : addCorsMappings
+2024-12-16T23:04:12.027+08:00  INFO 24444 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fbbd98c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5dd227b7, org.springframework.security.web.context.SecurityContextHolderFilter@1bba9862, org.springframework.security.web.header.HeaderWriterFilter@6db04a6, org.springframework.security.web.authentication.logout.LogoutFilter@11d422fd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@42e4431, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4ac0d49, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3d3b852e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@565c887e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@363ba634, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14ba7f15, org.springframework.security.web.access.ExceptionTranslationFilter@5516ee5, org.springframework.security.web.access.intercept.AuthorizationFilter@3340ff7c]
+2024-12-16T23:04:12.284+08:00  INFO 24444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9201 (http) with context path '/api'
+2024-12-16T23:04:12.294+08:00  INFO 24444 --- [main] com.pray.SpringRunning                   : Started SpringRunning in 3.648 seconds (process running for 4.202)
+2024-12-16T23:04:12.297+08:00  INFO 24444 --- [main] com.pray.SpringRunning                   : 当前运行环境：Java版本：17.0.12
+2024-12-16T23:04:26.577+08:00  INFO 24444 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-16T23:04:26.588+08:00  INFO 24444 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

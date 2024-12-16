@@ -84,10 +84,8 @@ public class MybatisCustomInterceptor implements Interceptor {
         //传入的SQl参数
         List<ParameterMapping> parameterMappings = boundSql.getParameterMappings();
         if (!CollectionUtils.isEmpty(parameterMappings) && parameterObject != null) {
-            Iterator mappingIterator = parameterMappings.iterator();
 
-            while(mappingIterator.hasNext()) {
-                ParameterMapping parameterMapping = (ParameterMapping)mappingIterator.next();
+            for (ParameterMapping parameterMapping : parameterMappings) {
                 if (parameterMapping.getMode() != ParameterMode.OUT) {
                     String propertyName = parameterMapping.getProperty();
                     Object value;
@@ -105,10 +103,8 @@ public class MybatisCustomInterceptor implements Interceptor {
             }
         }
         if (!CollectionUtils.isEmpty(parameterMappings)){
-            Iterator<ParameterMapping> iterator = parameterMappings.iterator();
 
-            while(iterator.hasNext()) {
-                ParameterMapping parameterMapping = iterator.next();
+            for (ParameterMapping parameterMapping : parameterMappings) {
                 String propertyName = parameterMapping.getProperty();
 
                 //todo 增加获取参数逻辑
