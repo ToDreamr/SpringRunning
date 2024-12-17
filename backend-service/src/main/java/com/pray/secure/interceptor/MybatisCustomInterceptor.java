@@ -1,5 +1,6 @@
 package com.pray.secure.interceptor;
 
+import cn.hutool.core.text.StrBuilder;
 import com.alibaba.fastjson2.JSON;
 import com.pray.common.DbOperateLog;
 import com.pray.common.PrayThreadPoolExecutor;
@@ -47,8 +48,8 @@ public class MybatisCustomInterceptor implements Interceptor {
 
         try {
             this.doProceed(invocation,now);
-        } catch (Exception var5) {
-            log.error("日志记录错误！", var5);
+        } catch (Exception var) {
+            log.error("日志记录错误！", var);
         }
         return ret;
     }
@@ -68,12 +69,26 @@ public class MybatisCustomInterceptor implements Interceptor {
         }
     }
     private void doExProceed(Object[] args, LocalDateTime now, MappedStatement ms) {
-        DbOperateLog dbOperateLog = (new DbOperateLog()).setCreateTime(now).setLogPosition(getStackTrace(ms.getId(), "com.sun.proxy")).setOperateContent(String.format("【数据库%s日志】 值：%s", ms.getSqlCommandType().equals(SqlCommandType.INSERT) ? "新增" : (ms.getSqlCommandType().equals(SqlCommandType.DELETE) ? "删除" : "更新"), JSON.toJSONString(args[1])));
+        StrBuilder executeContent = new StrBuilder();
+        switch (ms.getSqlCommandType()){
+            case INSERT: executeContent.append("新增");break;
+            case DELETE: executeContent.append("删除");break;
+            case SELECT: executeContent.append("查询");break;
+            case UPDATE: executeContent.append("更新");break;
+            default:break;
+        }
+
         BoundSql boundSql = ms.getBoundSql(args[1]);
         String sql = this.getSql(boundSql, ms);
+        DbOperateLog dbOperateLog = (new DbOperateLog()).setCreateTime(now).
+                setLogPosition(getStackTrace(ms.getId(), "com.sun.proxy")).
+                setOperateContent(String.format("【数据库%s日志】 值：%s",
+                        executeContent,
+                        sql));
         this.pool.execute(() -> {
-            log.info("Execute SQL: "+sql);
-            log.info(dbOperateLog.toString());
+            log.info("Execute SQL: {}", sql);
+            //不应该直接将类作为日志打印出来，而应该将关键信息提取出来再进行打印
+            log.info("执行任务:{}", dbOperateLog.getOperateContent());
         });
     }
 

@@ -9,6 +9,6 @@ ${AnsiColor.BRIGHT_GREEN}
 
 ${AnsiColor.BRIGHT_RED}
 Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}
-Boot Version: ${SpringRunning.version}
+JDK Version: ${java.version}
 Powered By Independent Developer Todreamr
 ${AnsiColor.DEFAULT}

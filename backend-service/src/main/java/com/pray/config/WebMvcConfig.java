@@ -1,5 +1,6 @@
-package com.pray.secure.interceptor;
+package com.pray.config;
 
+import com.pray.secure.interceptor.OnceRequestInterceptor;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    private Logger log = LoggerFactory.getLogger("WebMvcConfig");
+    private final Logger log = LoggerFactory.getLogger("WebMvcConfig");
     /**
      * 依赖于MVC的拦截器
      */
@@ -32,7 +33,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        log.info("addCorsMappings");
+        log.debug("执行跨域逻辑");
         registry.addMapping("*");
         registry.addMapping("/**")//项目中的所有接口都支持跨域
                 .allowedOriginPatterns("*")//所有地址都可以访问，也可以配置具体地址

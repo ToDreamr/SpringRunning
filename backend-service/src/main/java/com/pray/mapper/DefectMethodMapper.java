@@ -3,6 +3,7 @@ package com.pray.mapper;
 import com.pray.entity.DefectMethod;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,6 +16,8 @@ import java.util.List;
 @Mapper
 public interface DefectMethodMapper extends BaseMapper<DefectMethod> {
     List<DefectMethod> getQcMethodItems();
+    int batchInsertItems(@Param("methodList") List<DefectMethod> defectMethodList);
+    List<DefectMethod> selectForEachConditionally(@Param("dm_id")Integer dmId,@Param("runScript") String runScript);
 }
 
 

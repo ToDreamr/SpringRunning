@@ -81,7 +81,7 @@ public class SpringTaskCornConfig  implements ApplicationRunner {
                 + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS"))
         );
     }
-    public ScheduledFuture<?> addSchduledTasks() {
+    public ScheduledFuture<?> addScheduledTasks() {
         ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
         ScheduledFuture<?> task1 = executor.scheduleAtFixedRate(() -> {
             try {
@@ -91,19 +91,19 @@ public class SpringTaskCornConfig  implements ApplicationRunner {
             }
         }, 0, 5000, TimeUnit.MILLISECONDS);
         ScheduledFuture<?> task2 = executor.scheduleAtFixedRate(this::task2, 0, 10000, TimeUnit.MILLISECONDS);
-        taskRegistry.addScheduledFuture("task1", List.of(task1,task2));
+        taskRegistry.scheduledTaskRegistry("task1", List.of(task1,task2));
         return task1;
     }
     public void removeTask() {
-        taskRegistry.removeScheduledFuture("task1");
+        taskRegistry.removeScheduledTask("task1");
+        taskRegistry.removeScheduledTask("task2");
     }
 
     /**
      * @param args incoming application arguments
-     * @throws Exception
      */
     @Override
-    public void run(ApplicationArguments args) throws Exception {
-        addSchduledTasks();
+    public void run(ApplicationArguments args) {
+      //  ScheduledFuture<?> future = addScheduledTasks();
     }
 }

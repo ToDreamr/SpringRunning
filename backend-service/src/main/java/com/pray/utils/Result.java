@@ -63,7 +63,7 @@ public class Result<T> {
     }
 
     /**
-     * 将数据转换为json
+     * 将数据转换为String-json
      * @return 转换结果
      */
     public String JsonResult(){

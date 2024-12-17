@@ -13,15 +13,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <p>
  * JwtUtils
- * <p>
- *
  * @author 春江花朝秋月夜
  * @since 2023/8/24
  */
@@ -32,6 +31,12 @@ public class JwtUtils {
     public  String SECRET_KEY;//密钥
     @Value("${spring.security.jwt.expire}")
     private long expireTime;//过期时间
+
+    /**
+     * 解析原始Token为DecodedJWT
+     * @param headToken
+     * @return
+     */
     public DecodedJWT resolve(String headToken){
         //undefined不是null
         if (headToken.isBlank()){
@@ -51,17 +56,27 @@ public class JwtUtils {
             return null;
         }
     }
+
+    /**
+     * 携带username，expireTime,nowTime,algorithm
+     * @param user
+     * @param username
+     * @return
+     */
     public String createJwtWithKeyParam(UserDetails user,String username){
         Algorithm algorithm=Algorithm.HMAC256(SECRET_KEY);
         //携带下面的信息
         return JWT.create()
                 .withClaim("username",username)
                 .withExpiresAt(expireTime())
-                .withIssuedAt(new Date())
+                .withIssuedAt(Instant.from(LocalDateTime.now()))
                 .sign(algorithm);//签名
     }
 
-    //设置过期时间
+    /**
+     * 设置过期时间
+     * @return
+     */
     public Date expireTime(){
         long now = System.currentTimeMillis();
         long future = now + TimeUnit.HOURS.toMillis(this.expireTime);

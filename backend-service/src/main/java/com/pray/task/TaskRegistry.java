@@ -16,11 +16,20 @@ import java.util.concurrent.ScheduledFuture;
 public class TaskRegistry {
     private final ConcurrentHashMap<String, ScheduledFuture<?>> taskFutures = new ConcurrentHashMap<>();
 
-    public void addScheduledFuture(String taskName, List<ScheduledFuture<?>> future) {
+    /**
+     * 注册定时任务
+     * @param taskName
+     * @param future
+     */
+    public void scheduledTaskRegistry(String taskName, List<ScheduledFuture<?>> future) {
         future.forEach(futureTask -> taskFutures.put(taskName, futureTask));
     }
 
-    public void removeScheduledFuture(String taskName) {
+    /**
+     * 删除定时任务
+     * @param taskName
+     */
+    public void removeScheduledTask(String taskName) {
         ScheduledFuture<?> future = taskFutures.get(taskName);
         if (future != null) {
             future.cancel(true);

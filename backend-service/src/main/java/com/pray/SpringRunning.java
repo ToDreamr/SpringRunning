@@ -23,13 +23,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 //        }
 )
 @MapperScan(basePackages = "com.pray.mapper")
-@Slf4j
 public class SpringRunning {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = SpringApplication.run(SpringRunning.class, args);
         Environment environment= applicationContext.getEnvironment();
-        log.info("当前运行环境：Java版本：{}",environment.getProperty("java.version"));
+        environment.getProperty("java.version");
     }
 }
 

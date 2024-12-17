@@ -22,8 +22,8 @@ backend:
         key: 'Rainy-Heights'
         expire: 72
       user:
-        name: 123
-        password: 123
+        name: admin
+        password: admin
   mail:
     host: "smtp.qq.com"
     port: 25
@@ -37,3 +37,4 @@ backend:
     file-path: ./log
     max-size: 5MB
     alive-time: 2
+    level: debug

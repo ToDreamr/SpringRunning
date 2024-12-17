@@ -58,6 +58,8 @@ logging:
     rollingpolicy:
       max-file-size: ${backend.log.max-size}
       max-history: ${backend.log.alive-time}
+  level:
+    com.pray: debug
 #  config: classpath:log4j-conf.xml
 url: ${backend.url}
 

@@ -120,6 +120,13 @@
             <artifactId>spring-boot-test</artifactId>
         </dependency>
 
+        <!--可以测试数据库的DAO测试依赖，需要添加对应的版本号才可行-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+
         <!-- json工具包 -->
         <dependency>
             <groupId>junit</groupId>
