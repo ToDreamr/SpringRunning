@@ -22,7 +22,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 //                RedisRepositoriesAutoConfiguration.class
 //        }
 )
-@MapperScan(basePackages = "com.pray.mapper")
+@MapperScan(basePackages = {"com.pray.mapper","com.pray.rbac.mapper"})
 public class SpringRunning {
 
     public static void main(String[] args) {

@@ -33,7 +33,7 @@ build/
 
 ### VS Code ###
 .vscode/
-
+log
 ### Mac OS ###
 .DS_Store
 dump.rdb

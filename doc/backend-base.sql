@@ -118,7 +118,7 @@ INSERT INTO `tb_borrow` VALUES (16, 1, 1);
 -- ----------------------------
 -- Table structure for tb_sys
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_sys`;
+DROP TABLE IF EXISTS tb_sys_conf;
 CREATE TABLE `tb_sys`  (
   `id` int NULL DEFAULT NULL COMMENT '序号',
   `config_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '配置名',
@@ -130,9 +130,9 @@ CREATE TABLE `tb_sys`  (
 -- ----------------------------
 -- Records of tb_sys
 -- ----------------------------
-INSERT INTO `tb_sys` VALUES (1, 'QQ邮箱号', 'spring.mail.username', '484510171@qq.com', '1');
-INSERT INTO `tb_sys` VALUES (2, 'QQ邮箱授权码', 'spring.mail.password', '', '1');
-INSERT INTO `tb_sys` VALUES (3, '邮箱验证码模板', 'user.code.format', '【poem】%s为本次验证的验证码，请在', '1');
+INSERT INTO tb_sys_conf VALUES (1, 'QQ邮箱号', 'spring.mail.username', '484510171@qq.com', '1');
+INSERT INTO tb_sys_conf VALUES (2, 'QQ邮箱授权码', 'spring.mail.password', '', '1');
+INSERT INTO tb_sys_conf VALUES (3, '邮箱验证码模板', 'user.code.format', '【poem】%s为本次验证的验证码，请在', '1');
 
 -- ----------------------------
 -- Table structure for tb_undo_log

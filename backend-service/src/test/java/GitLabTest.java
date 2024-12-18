@@ -1,11 +1,10 @@
 import com.pray.SpringRunning;
 import com.pray.gitlab.FileFetchService;
+import com.pray.rbac.provider.SysRoleSQLProvider;
 import jakarta.annotation.Resource;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -75,4 +74,8 @@ public class GitLabTest {
         GitLabAPIUtils.getFileContentFromRepository("gitlab.com/ToDreamr","","","master");
     }
 
+    @Test
+    public void RoleProvider(){
+        System.out.println(new SysRoleSQLProvider().selectByProvidedSQL(1L).getSelf());
+    }
 }

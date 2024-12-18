@@ -22,12 +22,12 @@ import java.util.Arrays;
 @SpringBootTest(classes = SpringRunning.class)
 @ComponentScan(basePackages = "com.pray.*")
 public class PrayApplicationTest {
-    private static final DateTimeFormatter timeFormatter=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     @Test
     public void classLoader() {
         Cache<Object, Object> cache = Caffeine.newBuilder().build();
-        cache.put("2024-7-12","14:21 afternoon");
+        cache.put("2024-7-12", "14:21 afternoon");
 
         System.out.println(cache.getIfPresent("2024-7-12"));
         //// 优先根据key查询JVM缓存，如果未命中，则执行参数二的Lambda表达式
@@ -39,23 +39,25 @@ public class PrayApplicationTest {
         //默认情况下，当一个缓存元素过期的时候，Caffeine不会自动立即将其清理和驱逐。
         // 而是在一次读或写操作后，或者在空闲时间完成对失效数据的驱逐。
     }
+
     @Test
     public void resource() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(URLClassLoader.
                 getSystemResource("html/custom-mail.html").getFile()));
-        while (reader.readLine()!=null){
+        while (reader.readLine() != null) {
             System.out.println(reader.readLine());
         }
     }
+
     @Test
-    public void array_DeQueue_Test(){
-        ArrayDeque<String> deque = new ArrayDeque<>(),min;
+    public void array_DeQueue_Test() {
+        ArrayDeque<String> deque = new ArrayDeque<>(), min;
         deque.addLast("尾部元素");
         deque.addFirst("头部元素");
 
-        min = new ArrayDeque<>(Arrays.asList("尾部元素", "哈哈"));
+        min = new ArrayDeque<>(Arrays.asList("尾部元素", "哈哈大笑"));
 
-        while (!deque.isEmpty()&&!min.isEmpty()){
+        while (!deque.isEmpty() && !min.isEmpty()) {
             System.out.println(deque.pollFirst());
             System.out.println(min.pollFirst());
         }

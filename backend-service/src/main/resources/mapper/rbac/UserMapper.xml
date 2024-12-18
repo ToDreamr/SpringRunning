@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pray.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.pray.entity.User">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="userStatus" column="user_status" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
+        <result property="userType" column="user_type" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,username,email,user_status,create_time,update_time,phone_number,user_type
+    </sql>
+
+
+    <select id="selectRolesByUserId" resultType="com.pray.entity.rbac.SysRoleExtend">
+        SELECT r.id,
+               r.role_name   roleName,
+               r.enabled,
+               r.create_by   createBy,
+               r.create_time createTime,
+               u.username   ,
+               u.email
+        FROM tb_user u
+                 INNER JOIN tb_sys_user_role ur ON u.id = ur.user_id
+                 INNER JOIN tb_sys_role r ON ur.role_id = r.id
+        WHERE u.id = #{userId}
+
+    </select>
+
+    <!--添加参数是对象的查询-->
+    <select id="selectRolesByUserAndRole" resultType="com.pray.entity.rbac.SysRole">
+        SELECT r.id,
+               r.role_name   roleName,
+               r.enabled,
+               r.create_by   createBy,
+               r.create_time createTime
+        FROM tb_user u
+                 INNER JOIN tb_sys_user_role ur ON u.id = ur.user_id
+                 INNER JOIN tb_sys_role r ON ur.role_id = r.id
+        WHERE u.id = #{user.id} AND r.enabled = #{role.enabled}
+    </select>
+
+    <!--当我们需要拿到主键自增的值的时候，我们需要做下面这件事-->
+    <!--useGeneratedKeys设置为ture后，MyBatis会使用JDBC的getGeneratedKeys()
+    方法来取出由数据库内部生成的主键。获取到主键后将其赋值给keyProperty配置的id属性。-->
+    <insert id="insertUseGeneratedKeys" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO (<include refid="Base_Column_List"/>)
+            VALUES (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <!--使用SelectKey帮助不提供自增主键数据库进行插入或查询-->
+    <!--selectKey标签，其中：
+    keyColumn：主键的数据库列名。
+    resultType：返回值类型。
+    keyProperty：主键对应的属性名。
+    order：该属性的设置和使用的数据库有关，如果使用的是MySql数据库，
+    设置的值是AFTER，因为当前记录的主键值在insert语句执行成功后才能获取到。如果使用的是Oracle数据库，设置的值是BEFORE，
+    因为Oracle中需要先从序列获取值，然后将值作为主键插入到数据库中。-->
+    <insert id="insertUseSelectKey">
+        INSERT INTO sys_user(user_name, user_password, user_email, user_info, head_img, create_time)
+        VALUES (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
+        <selectKey keyColumn="id" resultType="long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+</mapper>

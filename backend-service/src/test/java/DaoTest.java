@@ -1,7 +1,10 @@
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.pray.SpringRunning;
 import com.pray.entity.DefectMethod;
+import com.pray.entity.rbac.SysRoleExtend;
 import com.pray.mapper.DefectMethodMapper;
+import com.pray.mapper.UserMapper;
+import com.pray.rbac.mapper.SysRoleMapper;
 import jakarta.annotation.Resource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +25,10 @@ import java.util.List;
 public class DaoTest {
     @Resource
     DefectMethodMapper defectMethodMapper;
+    @Resource
+    protected UserMapper userMapper;
+    @Resource
+    protected SysRoleMapper roleMapper;
     @Test
     public void batchTest(){
 
@@ -38,7 +45,6 @@ public class DaoTest {
             defectMethodList.add(defectMethod);
         }
 
-
         defectMethodMapper.batchInsertItems(defectMethodList);
     }
     @Test
@@ -51,5 +57,10 @@ public class DaoTest {
         QueryWrapper<DefectMethod> wrapper = new QueryWrapper<>();//用于构造查询的装饰器，自定义的插入语句（通过 Wrapper 等方式添加条件），可以用来添加条件
         wrapper.geSql("dm_id",String.valueOf(12));
         defectMethodMapper.selectList(wrapper).forEach(System.out::println);
+    }
+    @Test
+    public void SysRole(){
+        List<SysRoleExtend> sysRoleExtends = userMapper.selectRolesByUserId(1);
+        sysRoleExtends.forEach(System.out::println);
     }
 }

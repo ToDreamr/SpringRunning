@@ -23,7 +23,7 @@ public class CustomEnvironmentPostConfig implements EnvironmentPostProcessor { /
 
     //静态字段，无法使用Spring注入，后续使用文件内容？？？
     public static final String TABLE_NAME = "tb_sys";
-    public static final String SQL = "select * from `spring_runner`.tb_sys";
+    public static final String SQL = "select * from `spring_runner`.tb_sys_conf";
 
     public static final String sqlPath = "";
     private static final String DATABASE = "spring_runner";

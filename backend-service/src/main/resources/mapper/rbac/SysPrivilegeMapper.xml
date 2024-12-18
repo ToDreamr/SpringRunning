@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pray.rbac.mapper.SysPrivilegeMapper">
+
+    <resultMap id="BaseResultMap" type="com.pray.entity.rbac.SysPrivilege">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="privilegeName" column="privilege_name" jdbcType="VARCHAR"/>
+            <result property="privilegeUrl" column="privilege_url" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,privilege_name,privilege_url
+    </sql>
+</mapper>

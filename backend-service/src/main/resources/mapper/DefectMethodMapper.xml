@@ -73,4 +73,19 @@
         and dm_id = #{dm_id}
     </select>
 
+    <!--
+    int updateByMap(@Param("userMap") Map<String, Object> map);
+    -->
+    <update id="updateByMap">
+        UPDATE sys_user
+        SET
+        <foreach collection="userMap" item="val" index="key" separator=",">
+            ${key} = #{val}
+        </foreach>
+        WHERE id = #{userMap.id}
+    </update>
+
+
+
+
 </mapper>
