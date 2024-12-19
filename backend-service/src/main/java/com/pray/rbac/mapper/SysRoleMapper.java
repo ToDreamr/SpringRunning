@@ -29,8 +29,8 @@ public interface SysRoleMapper extends BaseMapper<SysRole> {
     @Select("SELECT id,role_name,enabled,create_by,create_time FROM tb_sys_role WHERE id = #{id}")
     SysRole selectByIds(Long id);
 
-//    @SelectProvider(type = SysRoleSQLProvider.class, method = "selectByProvidedSQL")
-//    SysRole selectBySQLProvider(Long id);
+    //    @SelectProvider(type = SysRoleSQLProvider.class, method = "selectByProvidedSQL")
+    //    SysRole selectBySQLProvider(Long id);
 
 }
 

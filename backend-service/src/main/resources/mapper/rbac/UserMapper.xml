@@ -65,11 +65,67 @@
     设置的值是AFTER，因为当前记录的主键值在insert语句执行成功后才能获取到。如果使用的是Oracle数据库，设置的值是BEFORE，
     因为Oracle中需要先从序列获取值，然后将值作为主键插入到数据库中。-->
     <insert id="insertUseSelectKey">
-        INSERT INTO sys_user(user_name, user_password, user_email, user_info, head_img, create_time)
+        INSERT INTO tb_user(user_name, user_password, user_email, user_info, head_img, create_time)
         VALUES (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
         <selectKey keyColumn="id" resultType="long" keyProperty="id" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
     </insert>
+
+    <select id="selectByUser" resultType="com.pray.entity.User">
+        SELECT  id,
+        user_name,
+        user_password,
+        user_email,
+        create_time
+        FROM tb_user
+        WHERE 1 = 1
+        <if test="userName != null and userName != ''">
+            AND user_name LIKE CONCAT('%',#{userName},'%')
+        </if>
+        <if test="userEmail != null and userEmail != ''">
+            AND user_email = #{userEmail}
+        </if>
+    </select>
+
+    <update id="updateByIdSelective">
+        UPDATE tb_user
+        SET
+        <if test="userName != null and userName != ''">
+            user_name = #{userName},
+        </if>
+        <if test="userPassword != null and userPassword != ''">
+            user_password = #{userPassword},
+        </if>
+        <if test="userEmail != null and userEmail != ''">
+            user_email = #{userEmail},
+        </if>
+        <if test="userInfo != null and userInfo != ''">
+            user_info = #{userInfo},
+        </if>
+        <if test="headImg != null">
+            head_img = #{headImg,jdbcType=BLOB},
+        </if>
+        <if test="createTime != null">
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+        </if>
+        id = #{id}
+        WHERE id = #{id}
+    </update>
+
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tb_user(user_name, user_password,
+        <if test="userEmail != null and userEmail != ''">
+            user_email,
+        </if>
+        user_info, head_img, create_time)
+        VALUES (#{userName},#{userPassword},
+        <if test="userEmail != null and userEmail != ''">
+            #{userEmail},
+        </if>
+        #{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+
 
 </mapper>

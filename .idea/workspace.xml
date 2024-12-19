@@ -8,7 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat: mybatis xml project rbac check">
-      <change beforePath="$PROJECT_DIR$/backend-service/src/test/java/PrayApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/test/java/PrayApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/rbac/mapper/SysRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/rbac/mapper/SysRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/resources/mapper/rbac/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/resources/mapper/rbac/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +54,16 @@
     &quot;author&quot;: &quot;ToDreamr&quot;
   }
 }</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="feat: mybatis xml project rbac check" />
+        <option name="rewordedMessage" value="feat: mybatis xml project rbac check" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="688430c2f43bdfebb83ba377c3e59bcc874d3cb1" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ToDreamr/SpringRunning.git&quot;,
@@ -453,7 +466,8 @@
       <workItem from="1734411215509" duration="2395000" />
       <workItem from="1734413645624" duration="6733000" />
       <workItem from="1734429476000" duration="15429000" />
-      <workItem from="1734534570408" duration="1669000" />
+      <workItem from="1734534570408" duration="3282000" />
+      <workItem from="1734595114925" duration="434000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -607,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734535940161</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: mybatis xml project rbac check">
+      <option name="closed" value="true" />
+      <created>1734536571397</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1734536571397</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
