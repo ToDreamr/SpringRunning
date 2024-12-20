@@ -26,7 +26,7 @@
                r.enabled,
                r.create_by   createBy,
                r.create_time createTime,
-               u.username   ,
+               u.username,
                u.email
         FROM tb_user u
                  INNER JOIN tb_sys_user_role ur ON u.id = ur.user_id
@@ -45,7 +45,8 @@
         FROM tb_user u
                  INNER JOIN tb_sys_user_role ur ON u.id = ur.user_id
                  INNER JOIN tb_sys_role r ON ur.role_id = r.id
-        WHERE u.id = #{user.id} AND r.enabled = #{role.enabled}
+        WHERE u.id = #{user.id}
+          AND r.enabled = #{role.enabled}
     </select>
 
     <!--当我们需要拿到主键自增的值的时候，我们需要做下面这件事-->
@@ -53,7 +54,8 @@
     方法来取出由数据库内部生成的主键。获取到主键后将其赋值给keyProperty配置的id属性。-->
     <insert id="insertUseGeneratedKeys" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO (<include refid="Base_Column_List"/>)
-            VALUES (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
+        VALUES
+        (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
     </insert>
 
     <!--使用SelectKey帮助不提供自增主键数据库进行插入或查询-->
@@ -66,14 +68,15 @@
     因为Oracle中需要先从序列获取值，然后将值作为主键插入到数据库中。-->
     <insert id="insertUseSelectKey">
         INSERT INTO tb_user(user_name, user_password, user_email, user_info, head_img, create_time)
-        VALUES (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
+        VALUES
+        (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
         <selectKey keyColumn="id" resultType="long" keyProperty="id" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
     </insert>
 
     <select id="selectByUser" resultType="com.pray.entity.User">
-        SELECT  id,
+        SELECT id,
         user_name,
         user_password,
         user_email,
@@ -127,5 +130,106 @@
     </insert>
 
 
+    <select id="selectByIdOrUserName" resultType="com.pray.entity.User">
+        SELECT id,
+        user_name,
+        user_password,
+        user_email,
+        create_time
+        FROM tb_user
+        WHERE 1 = 1
+        <choose>
+            <when test="id != null">
+                AND id = #{id}
+            </when>
+            <when test="userName != null and userName != ''">
+                AND user_name = #{userName}
+            </when>
+            <otherwise>
+                AND 1 = 2
+            </otherwise>
+        </choose>
+
+        <where>
+            <if test="userName!=null">
+                AND user_name = #{username}
+            </if>
+            <if test="userEmail!=null">
+                AND email=#{email}
+            </if>
+        </where>
+    </select>
+
+
+    <!--MyBatis是支持resultMap映射继承-->
+    <resultMap id="userRoleMap" type="com.pray.entity.rbac.SysRoleExtend" extends="BaseResultMap">
+        <id property="id" column="id"/>
+        <!--role相关属性-->
+        <result property="sysRole.id" column="role_id"/>
+        <result property="sysRole.roleName" column="role_role_name"/>
+        <result property="sysRole.enabled" column="role_enabled"/>
+        <result property="sysRole.createBy" column="role_create_by"/>
+        <result property="sysRole.createTime" column="role_create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--上下等价-->
+    <resultMap id="userRoleMapAssociation" type="com.pray.entity.rbac.SysRoleExtend" extends="BaseResultMap">
+        <association property="sysRole" columnPrefix="role_" javaType="com.pray.entity.rbac.SysRole">
+            <result property="id" column="id"/>
+            <result property="roleName" column="role_name"/>
+            <result property="enabled" column="enabled"/>
+            <result property="createBy" column="create_by"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        </association>
+    </resultMap>
+
+    <!--这里的查询语句，我们使用的是resultMap而不是resultType。-->
+    <select id="selectUserAndRoleByIdResultMap" resultMap="userRoleMap">
+        SELECT u.id,
+               u.username,
+               u.password,
+               u.email,
+               u.create_time,
+               r.id          role_id,
+               r.role_name   role_role_name,
+               r.enabled     role_enabled,
+               r.create_by   role_create_by,
+               r.create_time role_create_time
+        FROM tb_user u
+                 INNER JOIN tb_sys_user_role ur ON u.id = ur.user_id
+                 INNER JOIN tb_sys_role r ON ur.role_id = r.id
+        WHERE u.id = #{id}
+    </select>
+
+
+    <resultMap id="userRoleMapSelect" type="com.pray.entity.rbac.SysRoleExtend" extends="userRoleMap">
+        <!--association标签实现嵌套查询，用到的属性总结如下：
+
+        1)select：另一个映射查询的id，MyBatis会额外执行这个查询获取嵌套对象的结果。
+
+        2)column：将主查询中列的结果作为嵌套查询的参数，配置方式如column="{prop1=col1,prop2=col2}",prop1和prop2将作为嵌套查询的参数。
+
+        3)fetchType：数据加载方式，可选值为lazy和eager，分别为延迟加载和积极加载。
+
+        4)如果要使用延迟加载，除了将fetchType设置为lazy，还需要注意全局配置aggressiveLazyLoading的值应该为false。这个参数在3.4.5版本之前默认值为ture，
+        从3.4.5版本开始默认值改为false。
+
+        5)MyBatis提供的lazyLoadTriggerMethods参数，支持在触发某方法时直接触发延迟加载属性的查询，如equals()方法-->
+        <association property="sysRole"
+                     select="com.pray.rbac.mapper.SysRoleMapper.selectRoleById"
+                     column="{id=role_id}"/>
+    </resultMap>
+
+    <select id="selectUserAndRoleByIdSelect" resultMap="userRoleMapSelect">
+        SELECT u.id,
+               u.username,
+               u.password,
+               u.email,
+               u.create_time,
+               ur.role_id
+        FROM tb_user u
+                 INNER JOIN tb_sys_user_role ur ON u.id = ur.user_id
+        WHERE u.id = #{id}
+    </select>
 
 </mapper>

@@ -86,9 +86,9 @@ public class MybatisCustomInterceptor implements Interceptor {
                         executeContent,
                         sql));
         this.pool.execute(() -> {
-            log.info("Execute SQL: {}", sql);
+            log.trace("Execute SQL: {}", sql);
             //不应该直接将类作为日志打印出来，而应该将关键信息提取出来再进行打印
-            log.info("执行任务:{}", dbOperateLog.getOperateContent());
+            log.trace("执行任务:{}", dbOperateLog.getOperateContent());
         });
     }
 

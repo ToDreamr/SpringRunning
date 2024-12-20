@@ -66,4 +66,30 @@ public interface UserMapper extends BaseMapper<User> {
      */
     int insertSelective(User sysUser);
 
+    /**
+     * 根据用户id或用户名查询
+     *
+     * 使用Choose-When 语句，当条件都不满足得时候选择始终为false得条件
+     * @param sysUser
+     * @return
+     */
+    User selectByIdOrUserName(User sysUser);
+
+
+    /**
+     * 根据用户id获取用户信息和用户的角色信息
+     *
+     * @param id
+     * @return
+     */
+    List<SysRoleExtend> selectUserAndRoleByIdResultMap(Long id);
+
+    /**
+     * 根据用户id获取用户信息和用户的角色信息，嵌套查询方式
+     *
+     * @param id
+     * @return
+     */
+    List<SysRoleExtend> selectUserAndRoleByIdSelect(Long id);
+
 }

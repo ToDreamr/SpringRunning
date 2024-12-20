@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.pray.rbac.provider.SysRoleSQLProvider;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
 * @author Rainy-Heights
 * @description 针对表【tb_sys_role(角色表)】的数据库操作Mapper
@@ -31,6 +33,7 @@ public interface SysRoleMapper extends BaseMapper<SysRole> {
 
     //    @SelectProvider(type = SysRoleSQLProvider.class, method = "selectByProvidedSQL")
     //    SysRole selectBySQLProvider(Long id);
+    List<SysRole> selectRoleById(int id);
 
 }
 

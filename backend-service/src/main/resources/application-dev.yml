@@ -69,3 +69,5 @@ mybatis-plus:
       table-prefix: tb_
   configuration:
     map-underscore-to-camel-case: true
+    aggressive-lazy-loading: false
+    default-enum-type-handler: com.pray.rbac.type.RoleEnabledTypeHandler

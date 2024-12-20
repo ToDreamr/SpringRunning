@@ -17,4 +17,15 @@
         create_by,create_time
     </sql>
 
+    <resultMap id="roleMap" type="com.pray.entity.rbac.SysRole">
+        <id property="id" column="id"/>
+        <result property="roleName" column="role_name"/>
+        <result property="enabled" column="enabled"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="selectRoleById" resultMap="roleMap">
+        SELECT * FROM tb_sys_role WHERE id = #{id}
+    </select>
 </mapper>

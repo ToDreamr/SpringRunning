@@ -1,6 +1,8 @@
 package com.pray.entity.rbac;
 
 import com.pray.entity.User;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * SysRoleExtend 一个人具有的角色权限结果表拓展出来的类
@@ -9,24 +11,18 @@ import com.pray.entity.User;
  * @since 2024/12/17 下午8:03
  */
 
-public class SysRoleExtend extends SysRole {
-    private User sysUser;
+@Setter
+@Getter
+public class SysRoleExtend extends User {
+    private SysRole sysRole;
 
-    public User getSysUser() {
-        return sysUser;
-    }
-
-    public void setSysUser(User sysUser) {
-        this.sysUser = sysUser;
-    }
 
     /**
-     * @return
      */
     @Override
     public String toString() {
         return "SysRoleExtend{" +
-                "sysUser=" + sysUser +
+                "sysRole=" + sysRole +
                 "} " + super.toString();
     }
 }

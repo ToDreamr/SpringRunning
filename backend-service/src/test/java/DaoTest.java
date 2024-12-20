@@ -59,8 +59,8 @@ public class DaoTest {
         defectMethodMapper.selectList(wrapper).forEach(System.out::println);
     }
     @Test
-    public void SysRole(){
-        List<SysRoleExtend> sysRoleExtends = userMapper.selectRolesByUserId(1);
-        sysRoleExtends.forEach(System.out::println);
+    public void SysRole() {
+//        userMapper.selectUserAndRoleByIdResultMap(1L).forEach(System.out::println);
+        userMapper.selectUserAndRoleByIdSelect(2L).forEach(System.out::println);
     }
 }
