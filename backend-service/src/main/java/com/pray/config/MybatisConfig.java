@@ -7,7 +7,9 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
- * MybatisConfig
+ * MybatisConfig MybatisPlus配置类
+ * 配置分页插件
+ * </p>
  * <p>
  *
  * @author 春江花朝秋月夜

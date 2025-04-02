@@ -16,9 +16,16 @@ import java.util.concurrent.TimeUnit;
  */
 @Data
 public class RedisCacheUpdate implements Runnable{
-    String redisKey;
-    RedisTemplate redisTemplate;
-    Object data;
+    private String redisKey;
+    private RedisTemplate<Object,Object> redisTemplate;
+    private Object data;
+
+    /**
+     * 构造方法
+     * @param redisKey
+     * @param stringRedisTemplate
+     * @param data
+     */
     public RedisCacheUpdate(String redisKey,
                             RedisTemplate<Object, Object> stringRedisTemplate,
                             Object data) {
@@ -26,6 +33,10 @@ public class RedisCacheUpdate implements Runnable{
         this.redisTemplate=stringRedisTemplate;
         this.data=data;
     }
+
+    /**
+     * 异步更新Redis缓存
+     */
     @Override
     public void run() {
         //异步更新Redis缓存

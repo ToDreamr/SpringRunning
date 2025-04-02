@@ -14,7 +14,13 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
- * RestrictHandler
+ * RestrictHandler 简易版限流
+ * 1.使用阻塞队列实现
+ * 2.使用Map实现
+ * 3.使用延时队列实现
+ * 4.使用线程池实现
+ * 5.使用Redis实现
+ * 6.使用Lua脚本实现
  * <p>
  * @author 春江花朝秋月夜
  * @since 2023/8/25 13:13

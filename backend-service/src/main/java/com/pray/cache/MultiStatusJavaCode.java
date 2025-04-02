@@ -1,10 +1,7 @@
 package com.pray.cache;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 /**
- * A
+ * 多态测试
  *
  * @author Cotton Eye Joe
  * @since 2024/10/8 19:38
@@ -21,11 +18,16 @@ public class MultiStatusJavaCode {
     }
 
     static class D extends C {
+        private int sonDField = 10;
         public D() {
         }
 
         public D(int fatherCField) {
             super(fatherCField);
+        }
+        public D(int fatherCField, int sonDField) {
+            super(fatherCField);
+            this.sonDField = sonDField;
         }
     }
     interface K {
@@ -56,7 +58,7 @@ public class MultiStatusJavaCode {
         @Override
         public void defaultMethod() {
             K.interfaceStatic();
-            K.super.defaultMethod();
+            System.out.println("子类重写父接口的默认方法");
         }
 
     }

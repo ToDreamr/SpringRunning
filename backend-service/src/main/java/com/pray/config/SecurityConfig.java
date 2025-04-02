@@ -53,15 +53,6 @@ public class SecurityConfig  {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(conf -> conf.requestMatchers("/**").anonymous())
-//                .cors(c -> {
-//                    CorsConfigurationSource source = request -> {
-//                        CorsConfiguration config = new CorsConfiguration();
-//                        config.setAllowedOrigins(Arrays.asList("*"));
-//                        config.setAllowedMethods(Arrays.asList("*"));
-//                        return config;
-//                    };
-//                    c.configurationSource(source);
-//                })
                 .formLogin
                         (
                                 conf -> conf.loginProcessingUrl("/auth/login").permitAll()

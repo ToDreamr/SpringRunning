@@ -2,6 +2,7 @@ package com.pray.controller;
 
 import com.pray.common.UserHolder;
 import com.pray.entity.dto.RegisterDto;
+import com.pray.entity.dto.UserDto;
 import com.pray.service.dao.UserService;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;
@@ -26,7 +27,7 @@ public class LoginController<T> {
     private UserService userService;
 
     @GetMapping("/local")
-    public Result getLocal(){
+    public Result<UserDto> getLocal(){
         return Result.ok(UserHolder.getLocalUser(),null);
     }
     @PostMapping("/register")

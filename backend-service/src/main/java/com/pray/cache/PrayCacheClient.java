@@ -26,6 +26,7 @@ import java.util.function.Function;
 @Component
 public class PrayCacheClient {
     private static final ExecutorService CACHE_REBUILD_EXECUTOR = Executors.newFixedThreadPool(10);
+
     @Autowired
     RedisTemplate<Object,Object> redisTemplate;
 
@@ -48,69 +49,6 @@ public class PrayCacheClient {
         redisTemplate.opsForValue().set(key,redisData);
     }
 
-    /**
-     * 缓存空对象解决缓存穿透
-     * @param keyPrefix
-     * @param id
-     * @param type
-     * @param callBack
-     * @param time
-     * @param unit
-     * @return
-     * @param <ID>
-     */
-    public <ID> Object  PassThrough(String keyPrefix, ID id, Class<Object> type, Function<ID,Object> callBack,
-                                    Long time,TimeUnit unit)    {
-          String key=keyPrefix+id;
-          //查询缓存数据
-         Object cacheValue = redisTemplate.opsForValue().get(key);
-         assert cacheValue != null;
-         if (!cacheValue.equals("")) {
-              return cacheValue;
-         }
-          //函数逻辑，根据id查数据
-          Object o=callBack.apply(id);
-          if (o==null){
-              //缓存空对象
-              redisTemplate.opsForValue().set(key,"", PrayConstants.NULL_TTL,TimeUnit.MINUTES);
-              return null;
-          }
-          this.set(key,o,time,unit);
-          return o;
-    }
-    public <ID> Object LogicalExpire(String keyPrefix,ID id,Class<Object> type,Function<ID,Object> callback,
-                                     Long time,TimeUnit unit){
-        String key = keyPrefix + id;
-        Object o = redisTemplate.opsForValue().get(key);
-        if (o==null){
-            return null;
-        }
-        RedisData redisData=(RedisData) o;
-        Object cacheValue=redisData.getData();
-        LocalDateTime expireTime = redisData.getExpireTime();
-
-        if (expireTime.isAfter(LocalDateTime.now())){
-            //缓存未过期，直接返回数据
-            return cacheValue;
-        }
-        //缓存过期
-        String lock=PrayConstants.TYPE_LOCK+id;
-        if (tryLock(lock)){
-            CACHE_REBUILD_EXECUTOR.submit(()->{
-               try{
-                   //查询数据库，重建缓存数据
-                   Object applyValue = callback.apply(id);
-                   //重建缓存
-                   this.setWithExpire(key,applyValue,time,unit);
-               }catch (Exception e){
-                   throw new RuntimeException(e);
-               }finally {
-                  unLock(lock);
-               }
-            });
-        }
-        return cacheValue;
-    }
     private boolean tryLock(String key) {
         //调用setIfNx方法
         Boolean flag = redisTemplate.opsForValue().setIfAbsent(key, "1", 10, TimeUnit.SECONDS);

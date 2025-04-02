@@ -28,7 +28,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(interceptor);
     }
+
     /**
+     * 跨域配置
+     * 注意：如果使用了Spring Security，需要在Spring Security的配置中进行跨域配置。
+     * 否则，Spring Security会拦截跨域请求，导致跨域失败。
+     * 解决方法：在Spring Security的配置中添加以下代码：
      * @param registry
      */
     @Override
