@@ -1,8 +1,10 @@
 package com.pray.common;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
-import org.jetbrains.annotations.TestOnly;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 

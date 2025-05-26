@@ -2,7 +2,7 @@ package com.pray.aop;
 
 import com.pray.annotation.LoginCheck;
 import com.pray.common.UserHolder;
-import com.pray.entity.dto.UserDto;
+import com.pray.entity.dto.UserDTO;
 import com.pray.entity.po.LoginUser;
 import com.pray.utils.JwtUtils;
 import com.pray.utils.Result;
@@ -45,7 +45,7 @@ public class LoginCheckAspect {
                 }
                 LoginUser user = tokenUtils.convertJwtIntoLoginUser(tokenUtils.resolve(authorization));
 
-                UserDto userDto = new UserDto();
+                UserDTO userDto = new UserDTO();
                 userDto.setUsername(user.getUsername());
 
                 UserHolder.setLocalUser(userDto);

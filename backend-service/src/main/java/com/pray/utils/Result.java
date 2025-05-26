@@ -35,7 +35,7 @@ public class Result<T> {
     }
 
     public static<T> Result<T> ok(T data, String message){
-        return  new Result(200,message,data);
+        return  new Result<T>(200,message,data);
     }
 
     public static<T> Result<T> ok(T data){

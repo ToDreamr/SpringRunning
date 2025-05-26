@@ -1,6 +1,6 @@
 package com.pray.common;
 
-import com.pray.entity.dto.UserDto;
+import com.pray.entity.dto.UserDTO;
 
 /**
  * <p>
@@ -11,13 +11,13 @@ import com.pray.entity.dto.UserDto;
  * @since 2023/8/24
  */
 public class UserHolder {
-    private static final ThreadLocal<UserDto> currentUser =new ThreadLocal<>();
+    private static final ThreadLocal<UserDTO> currentUser =new ThreadLocal<>();
 
-    public static void setLocalUser(UserDto userDto) {
+    public static void setLocalUser(UserDTO userDto) {
           currentUser.set(userDto);
     }
 
-    public static UserDto getLocalUser() {
+    public static UserDTO getLocalUser() {
         return currentUser.get();
     }
 

@@ -1,4 +1,4 @@
-package com.pray.entity.rbac;
+package com.pray.entity.po;
 
 
 import java.io.Serializable;

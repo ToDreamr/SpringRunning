@@ -1,6 +1,7 @@
 package com.pray.entity.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -10,8 +11,9 @@ import lombok.Data;
  * @author 春江花朝秋月夜
  * @since 2023/8/29 20:02
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class RegisterDto {
+public class RegisterDTO extends CommonDTO {
     /**
      * 用户名
      */

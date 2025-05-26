@@ -1,7 +1,5 @@
 package com.pray.build;
 
-import com.sun.security.auth.module.NTLoginModule;
-
 /**
  * NormalBuild
  *

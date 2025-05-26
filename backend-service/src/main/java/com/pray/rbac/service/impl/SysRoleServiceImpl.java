@@ -1,9 +1,9 @@
 package com.pray.rbac.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.pray.entity.rbac.SysRole;
-import com.pray.rbac.service.SysRoleService;
+import com.pray.entity.po.SysRole;
 import com.pray.rbac.mapper.SysRoleMapper;
+import com.pray.rbac.service.SysRoleService;
 import org.springframework.stereotype.Service;
 
 /**

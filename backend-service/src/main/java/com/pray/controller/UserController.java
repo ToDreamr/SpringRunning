@@ -1,6 +1,6 @@
 package com.pray.controller;
 
-import com.pray.entity.User;
+import com.pray.entity.po.User;
 import com.pray.service.dao.UserService;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;

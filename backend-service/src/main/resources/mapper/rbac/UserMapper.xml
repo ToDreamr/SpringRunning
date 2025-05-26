@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pray.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="com.pray.entity.User">
+    <resultMap id="BaseResultMap" type="com.pray.entity.po.User">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="email" column="email" jdbcType="VARCHAR"/>
@@ -20,7 +20,7 @@
     </sql>
 
 
-    <select id="selectRolesByUserId" resultType="com.pray.entity.rbac.SysRoleExtend">
+    <select id="selectRolesByUserId" resultType="com.pray.entity.po.SysRoleExtend">
         SELECT r.id,
                r.role_name   roleName,
                r.enabled,
@@ -36,7 +36,7 @@
     </select>
 
     <!--添加参数是对象的查询-->
-    <select id="selectRolesByUserAndRole" resultType="com.pray.entity.rbac.SysRole">
+    <select id="selectRolesByUserAndRole" resultType="com.pray.entity.po.SysRole">
         SELECT r.id,
                r.role_name   roleName,
                r.enabled,
@@ -75,7 +75,7 @@
         </selectKey>
     </insert>
 
-    <select id="selectByUser" resultType="com.pray.entity.User">
+    <select id="selectByUser" resultType="com.pray.entity.po.User">
         SELECT id,
         user_name,
         user_password,
@@ -130,7 +130,7 @@
     </insert>
 
 
-    <select id="selectByIdOrUserName" resultType="com.pray.entity.User">
+    <select id="selectByIdOrUserName" resultType="com.pray.entity.po.User">
         SELECT id,
         user_name,
         user_password,
@@ -162,7 +162,7 @@
 
 
     <!--MyBatis是支持resultMap映射继承-->
-    <resultMap id="userRoleMap" type="com.pray.entity.rbac.SysRoleExtend" extends="BaseResultMap">
+    <resultMap id="userRoleMap" type="com.pray.entity.po.SysRoleExtend" extends="BaseResultMap">
         <id property="id" column="id"/>
         <!--role相关属性-->
         <result property="sysRole.id" column="role_id"/>
@@ -173,8 +173,8 @@
     </resultMap>
 
     <!--上下等价-->
-    <resultMap id="userRoleMapAssociation" type="com.pray.entity.rbac.SysRoleExtend" extends="BaseResultMap">
-        <association property="sysRole" columnPrefix="role_" javaType="com.pray.entity.rbac.SysRole">
+    <resultMap id="userRoleMapAssociation" type="com.pray.entity.po.SysRoleExtend" extends="BaseResultMap">
+        <association property="sysRole" columnPrefix="role_" javaType="com.pray.entity.po.SysRole">
             <result property="id" column="id"/>
             <result property="roleName" column="role_name"/>
             <result property="enabled" column="enabled"/>
@@ -202,7 +202,7 @@
     </select>
 
 
-    <resultMap id="userRoleMapSelect" type="com.pray.entity.rbac.SysRoleExtend" extends="userRoleMap">
+    <resultMap id="userRoleMapSelect" type="com.pray.entity.po.SysRoleExtend" extends="userRoleMap">
         <!--association标签实现嵌套查询，用到的属性总结如下：
 
         1)select：另一个映射查询的id，MyBatis会额外执行这个查询获取嵌套对象的结果。

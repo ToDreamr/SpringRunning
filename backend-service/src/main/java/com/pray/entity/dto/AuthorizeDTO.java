@@ -1,22 +1,20 @@
 package com.pray.entity.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.util.Date;
 
 /**
  * <p>
- * LoginFormDto
+ * AuthorizeVO
  * <p>
  *
  * @author 春江花朝秋月夜
  * @since 2023/8/24
  */
 @Data
-@Getter
-@Setter
-public class LoginFormDto {
+public class AuthorizeDTO extends CommonDTO{
     String username;
-    String password;
-    String code;
+    Date expireTime;
+    String token;
 }

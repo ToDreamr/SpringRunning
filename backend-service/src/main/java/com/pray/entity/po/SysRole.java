@@ -1,4 +1,4 @@
-package com.pray.entity.rbac;
+package com.pray.entity.po;
 
 
 import com.pray.rbac.type.RoleEnabled;
@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-
 import java.util.Date;
 
 

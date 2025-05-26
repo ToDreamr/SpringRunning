@@ -1,7 +1,7 @@
 package com.pray.rbac.service;
 
-import com.pray.entity.rbac.SysRole;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.pray.entity.po.SysRole;
 
 /**
 * @author Rainy-Heights

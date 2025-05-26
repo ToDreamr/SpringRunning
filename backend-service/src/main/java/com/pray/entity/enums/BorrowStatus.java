@@ -1,7 +1,6 @@
 package com.pray.entity.enums;
 
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * BorrowStatus

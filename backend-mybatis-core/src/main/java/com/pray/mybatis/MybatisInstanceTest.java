@@ -2,10 +2,7 @@ package com.pray.mybatis;
 
 import org.apache.ibatis.session.SqlSession;
 
-import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 /**
  * MybatisInstanceTest

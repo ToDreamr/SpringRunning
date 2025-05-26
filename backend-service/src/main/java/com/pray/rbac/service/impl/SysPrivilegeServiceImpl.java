@@ -1,9 +1,9 @@
 package com.pray.rbac.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.pray.entity.rbac.SysPrivilege;
-import com.pray.rbac.service.SysPrivilegeService;
+import com.pray.entity.po.SysPrivilege;
 import com.pray.rbac.mapper.SysPrivilegeMapper;
+import com.pray.rbac.service.SysPrivilegeService;
 import org.springframework.stereotype.Service;
 
 /**

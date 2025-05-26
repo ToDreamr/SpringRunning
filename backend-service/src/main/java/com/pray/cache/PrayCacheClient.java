@@ -1,8 +1,7 @@
 package com.pray.cache;
 
 import cn.hutool.core.util.BooleanUtil;
-import com.pray.constant.PrayConstants;
-import com.pray.entity.dto.RedisData;
+import com.pray.entity.dto.RedisDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -12,7 +11,6 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 
 /**
  * <p>
@@ -42,11 +40,11 @@ public class PrayCacheClient {
      * @param unit
      */
     public void setWithExpire(String key, Object value, Long time, TimeUnit unit){
-        RedisData redisData = new RedisData();
-        redisData.setData(value);
+        RedisDTO redisDTO = new RedisDTO();
+        redisDTO.setData(value);
         //转换传入时间为秒，设置过期时间
-        redisData.setExpireTime(LocalDateTime.now().plusSeconds(unit.toSeconds(time)));
-        redisTemplate.opsForValue().set(key,redisData);
+        redisDTO.setExpireTime(LocalDateTime.now().plusSeconds(unit.toSeconds(time)));
+        redisTemplate.opsForValue().set(key, redisDTO);
     }
 
     private boolean tryLock(String key) {

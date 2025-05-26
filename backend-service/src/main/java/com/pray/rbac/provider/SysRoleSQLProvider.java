@@ -2,7 +2,6 @@ package com.pray.rbac.provider;
 
 import org.apache.ibatis.jdbc.SQL;
 import org.springframework.jdbc.core.SqlProvider;
-import org.springframework.stereotype.Component;
 
 /**
  * SysRoleSQLProvider

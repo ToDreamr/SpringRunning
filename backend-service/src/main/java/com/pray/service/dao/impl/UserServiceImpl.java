@@ -8,16 +8,16 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.code.kaptcha.Producer;
 import com.pray.common.UserHolder;
-import com.pray.entity.User;
-import com.pray.entity.dto.LoginFormDto;
-import com.pray.entity.dto.RegisterDto;
-import com.pray.entity.dto.UserDto;
+import com.pray.constant.PrayConstants;
+import com.pray.entity.dto.AuthorizeDTO;
+import com.pray.entity.dto.LoginFormDTO;
+import com.pray.entity.dto.RegisterDTO;
+import com.pray.entity.dto.UserDTO;
 import com.pray.entity.po.LoginUser;
-import com.pray.entity.vo.response.AuthorizeVO;
+import com.pray.entity.po.User;
 import com.pray.mapper.LoginUserMapper;
 import com.pray.mapper.UserMapper;
 import com.pray.service.dao.UserService;
-import com.pray.constant.PrayConstants;
 import com.pray.utils.Result;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletOutputStream;
@@ -73,7 +73,7 @@ public class UserServiceImpl extends ServiceImpl<LoginUserMapper, LoginUser> imp
     }
 
     @Override
-    public Result register(RegisterDto registerDto) {
+    public Result register(RegisterDTO registerDto) {
         List<LoginUser> list = query().eq("username", registerDto.getUsername())
                 .eq("email", registerDto.getEmail()).list();
         if (!list.isEmpty()) {
@@ -142,7 +142,7 @@ public class UserServiceImpl extends ServiceImpl<LoginUserMapper, LoginUser> imp
 
     @Override
     @Deprecated
-    public Result login(HttpServletRequest request, LoginFormDto loginFormDto) throws Exception {
+    public Result login(HttpServletRequest request, LoginFormDTO loginFormDto) throws Exception {
         String username = loginFormDto.getUsername();
         String password = loginFormDto.getPassword();
         List<LoginUser> list = query().eq("username", username).eq("password", password).list();
@@ -151,7 +151,7 @@ public class UserServiceImpl extends ServiceImpl<LoginUserMapper, LoginUser> imp
             return Result.fail("不存在该用户，登录失败");
         }
         LoginUser account = list().get(0);
-        UserDto dto = BeanUtil.copyProperties(account, UserDto.class);
+        UserDTO dto = BeanUtil.copyProperties(account, UserDTO.class);
         UserHolder.setLocalUser(dto);//存入当前用户信息
         String token = "authorization";
         //封装用户信息为map添加到redis
@@ -167,13 +167,13 @@ public class UserServiceImpl extends ServiceImpl<LoginUserMapper, LoginUser> imp
             stringRedisTemplate.expire(key, 3, TimeUnit.MINUTES);
         }
         //返回token给前端,封装一个对象拷贝
-        AuthorizeVO authorizeVO = dto.asViewObject(AuthorizeVO.class, authorize -> {
+        AuthorizeDTO authorizeDTO = dto.asViewObject(AuthorizeDTO.class, authorize -> {
             authorize.setUsername(username);
             authorize.setExpireTime(new Date());
             authorize.setToken(token);
         });
 
-        return Result.ok(authorizeVO, "登录成功");
+        return Result.ok(authorizeDTO, "登录成功");
     }
 
     @Resource

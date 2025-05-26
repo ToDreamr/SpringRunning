@@ -1,6 +1,6 @@
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.pray.SpringRunning;
-import com.pray.entity.DefectMethod;
+import com.pray.entity.po.DefectMethod;
 import com.pray.mapper.DefectMethodMapper;
 import com.pray.mapper.UserMapper;
 import com.pray.rbac.mapper.SysRoleMapper;

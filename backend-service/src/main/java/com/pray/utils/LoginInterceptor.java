@@ -3,7 +3,7 @@ package com.pray.utils;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.pray.common.UserHolder;
-import com.pray.entity.dto.UserDto;
+import com.pray.entity.dto.UserDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -21,7 +21,6 @@ import static com.pray.constant.PrayConstants.LOGIN_USER_KEY;
  * @author 春江花朝秋月夜
  * @since 2023/8/24
  */
-@Deprecated
 public class LoginInterceptor implements HandlerInterceptor {
     private final StringRedisTemplate stringRedisTemplate;
 
@@ -41,7 +40,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         String userKey=LOGIN_USER_KEY+authorization;
         Map<Object, Object> map = stringRedisTemplate.opsForHash().entries(userKey);
-        UserDto userDto=BeanUtil.fillBeanWithMap(map, new UserDto(), true);
+        UserDTO userDto=BeanUtil.fillBeanWithMap(map, new UserDTO(), true);
         UserHolder.setLocalUser(userDto);
         return true;
     }
