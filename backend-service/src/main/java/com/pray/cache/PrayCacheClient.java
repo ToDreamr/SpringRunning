@@ -26,7 +26,7 @@ public class PrayCacheClient {
     private static final ExecutorService CACHE_REBUILD_EXECUTOR = Executors.newFixedThreadPool(10);
 
     @Autowired
-    RedisTemplate<Object,Object> redisTemplate;
+    private RedisTemplate<Object,Object> redisTemplate;
 
     public void set(String key, Object value, Long time, TimeUnit unit){
         redisTemplate.opsForValue().set(key,value,time,unit);

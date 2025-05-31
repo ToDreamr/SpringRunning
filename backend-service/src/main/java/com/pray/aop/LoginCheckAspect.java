@@ -25,7 +25,7 @@ public class LoginCheckAspect {
     @Autowired
     private HttpServletRequest request; // 自动注入 request 对象
     @Autowired
-    JwtUtils tokenUtils;
+    private JwtUtils tokenUtils;
 
     //在方法上来确定切面
     @Around("execution(* com.pray.controller..*.*(..))")//保持名字和下面的入参参数一致

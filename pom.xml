@@ -96,13 +96,13 @@
             <!--redis缓存和数据交互-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <artifactId>spring-boot-starter-delayQueueItem-redis</artifactId>
                 <version>3.1.2</version>
             </dependency>
 
             <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-redis</artifactId>
+                <groupId>org.springframework.delayQueueItem</groupId>
+                <artifactId>spring-delayQueueItem-redis</artifactId>
             </dependency>
 
             <dependency>
@@ -204,6 +204,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-websocket</artifactId>
                 <version>3.2.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>5.9.3</version> <!-- 使用最新稳定版 -->
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>5.9.3</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
 

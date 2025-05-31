@@ -1,7 +1,7 @@
 package com.pray.cache;
 
 import com.pray.constant.PrayConstants;
-import lombok.Data;
+import lombok.*;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.concurrent.TimeUnit;
@@ -14,25 +14,14 @@ import java.util.concurrent.TimeUnit;
  * @author 春江花朝秋月夜
  * @since 2023/9/13 16:08
  */
-@Data
-public class RedisCacheUpdate implements Runnable{
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+public class CacheUpdateTask implements Runnable{
     private String redisKey;
     private RedisTemplate<Object,Object> redisTemplate;
     private Object data;
-
-    /**
-     * 构造方法
-     * @param redisKey
-     * @param stringRedisTemplate
-     * @param data
-     */
-    public RedisCacheUpdate(String redisKey,
-                            RedisTemplate<Object, Object> stringRedisTemplate,
-                            Object data) {
-        this.redisKey = redisKey;
-        this.redisTemplate=stringRedisTemplate;
-        this.data=data;
-    }
 
     /**
      * 异步更新Redis缓存
