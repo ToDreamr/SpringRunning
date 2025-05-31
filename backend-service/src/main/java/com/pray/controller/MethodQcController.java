@@ -1,7 +1,7 @@
 package com.pray.controller;
 
 import com.pray.service.DefectMethodQcService;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

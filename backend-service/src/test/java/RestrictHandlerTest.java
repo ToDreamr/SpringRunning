@@ -1,9 +1,6 @@
-import com.pray.common.RestrictHandler;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import java.util.concurrent.*;
+import com.pray.delay.RestrictHandler;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.concurrent.*;
 
 
 /**
@@ -24,14 +21,14 @@ public class RestrictHandlerTest {
         System.out.println("=== 测试基本计数 ===");
         String key = "user1";
         for (int i = 1; i <= 6; i++) {
-            boolean isLimited = restrictHandler.check(key, 5);
+            boolean isLimited = restrictHandler.checkAndPut(key, 5);
             System.out.printf("第%d次请求，是否被限流：%b%n", i, isLimited);
         }
 
         // 3. 测试自动清理过期键
         System.out.println("\n=== 测试自动清理 ===");
         String expireKey = "user2";
-        restrictHandler.check(expireKey, 5);
+        restrictHandler.checkAndPut(expireKey, 5);
         System.out.println("添加键后，map中存在该键: " + restrictHandler.getMap().containsKey(expireKey));
         Thread.sleep(2100); // 等待2.1秒（超过时间窗口）
         System.out.println("等待2.1秒后，map中存在该键: " + restrictHandler.getMap().containsKey(expireKey));
@@ -42,7 +39,7 @@ public class RestrictHandlerTest {
         int threadCount = 10;
         ExecutorService executor = Executors.newFixedThreadPool(threadCount);
         for (int i = 0; i < threadCount; i++) {
-            executor.submit(() -> restrictHandler.check(concurrentKey, 5));
+            executor.submit(() -> restrictHandler.checkAndPut(concurrentKey, 5));
         }
         executor.shutdown();
         executor.awaitTermination(1, TimeUnit.SECONDS);
@@ -52,7 +49,7 @@ public class RestrictHandlerTest {
         // 5. 测试手动移除键
         System.out.println("\n=== 测试手动移除 ===");
         String removeKey = "user4";
-        restrictHandler.check(removeKey, 5);
+        restrictHandler.checkAndPut(removeKey, 5);
         System.out.println("添加键后，map中存在该键: " + restrictHandler.map.containsKey(removeKey));
         restrictHandler.removeDelayKey(removeKey);
         System.out.println("手动移除后，map中存在该键: " + restrictHandler.map.containsKey(removeKey));

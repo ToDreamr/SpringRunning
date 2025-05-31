@@ -23,6 +23,7 @@ public class UniqueIDGenerator {
     private static final long BEGIN_TIMESTAMP = 1694709840L;
     private static final int COUNT_BITS = 32;// 向左移动32位
 
+    @SuppressWarnings("All")
     public long nextId(String keyPrefix) {
         LocalDateTime now = LocalDateTime.now();
         long nowSec = now.toEpochSecond(ZoneOffset.UTC);

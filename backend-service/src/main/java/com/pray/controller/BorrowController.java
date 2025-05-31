@@ -4,7 +4,7 @@ import com.pray.entity.enums.BorrowStatus;
 import com.pray.service.dao.BookService;
 import com.pray.service.dao.BookUserService;
 import com.pray.service.dao.BorrowService;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 

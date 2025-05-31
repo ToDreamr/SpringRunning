@@ -1,12 +1,10 @@
-package com.pray.common;
+package com.pray.delay;
 
 import jakarta.annotation.PreDestroy;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.*;
@@ -27,21 +25,24 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @since 2023/8/25 13:13
  */
 @Component
-@Data
+@NoArgsConstructor
+@Setter
+@Getter
+@AllArgsConstructor
 public class RestrictHandler {
 
-    private final int limit;
-    private final int time;
+    public  int limit;
+    public  int time;
     private final AtomicBoolean state = new AtomicBoolean(false);
     public final BlockingQueue<TimeDelay> delayQueue=new DelayQueue<>();
     public final Map<String, DelayQueueItem> map = new ConcurrentHashMap<>();
 
-    public void init(String key,AtomicInteger value,long time){
+    public void put(String key,AtomicInteger value,long time){
         map.put(key, new DelayQueueItem(value, time));
         delayQueue.add(new TimeDelay(key, time));
     }
 
-    public boolean check(String key, int limit) {
+    public boolean checkAndPut(String key, int limit) {
         DelayQueueItem item = map.computeIfAbsent(key, k -> {
             DelayQueueItem newItem = new DelayQueueItem(new AtomicInteger(0), time);
             delayQueue.add(new TimeDelay(key, time));

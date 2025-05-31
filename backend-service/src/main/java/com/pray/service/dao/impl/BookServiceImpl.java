@@ -7,7 +7,7 @@ import com.pray.entity.po.Book;
 import com.pray.mapper.BookMapper;
 import com.pray.service.dao.BookService;
 import com.pray.service.dao.BorrowService;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

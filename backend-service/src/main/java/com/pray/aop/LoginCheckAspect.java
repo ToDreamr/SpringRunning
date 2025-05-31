@@ -5,7 +5,7 @@ import com.pray.common.UserHolder;
 import com.pray.entity.dto.UserDTO;
 import com.pray.entity.po.LoginUser;
 import com.pray.utils.JwtUtils;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

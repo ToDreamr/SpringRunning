@@ -2,7 +2,7 @@ package com.pray.controller;
 
 import com.pray.entity.po.User;
 import com.pray.service.dao.UserService;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

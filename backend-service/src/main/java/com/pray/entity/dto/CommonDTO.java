@@ -1,6 +1,9 @@
 package com.pray.entity.dto;
 
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * <p>
@@ -10,6 +13,8 @@ package com.pray.entity.dto;
  * @author 花行 (Rain)
  * @since  2025/5/26 9:55
  */
+@Setter
+@Getter
 public class CommonDTO extends ToString {
 
     /**

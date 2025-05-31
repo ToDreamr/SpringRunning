@@ -1,4 +1,4 @@
-package com.pray.utils;
+package com.pray.secure.interceptor;
 
 
 import cn.hutool.core.bean.BeanUtil;

@@ -18,5 +18,4 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDTO extends CommonDTO implements BaseData {
     public String username;
-    public int id;
 }

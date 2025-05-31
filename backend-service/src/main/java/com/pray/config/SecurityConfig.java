@@ -4,7 +4,7 @@ import com.pray.entity.dto.AuthorizeDTO;
 import com.pray.entity.po.LoginUser;
 import com.pray.service.dao.UserService;
 import com.pray.utils.JwtUtils;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

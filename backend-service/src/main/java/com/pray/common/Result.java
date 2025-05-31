@@ -1,4 +1,4 @@
-package com.pray.utils;
+package com.pray.common;
 
 import cn.hutool.json.JSONUtil;
 import lombok.AllArgsConstructor;

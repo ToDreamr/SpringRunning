@@ -4,7 +4,7 @@ import com.pray.common.UserHolder;
 import com.pray.entity.dto.RegisterDTO;
 import com.pray.entity.dto.UserDTO;
 import com.pray.service.dao.UserService;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

@@ -5,7 +5,7 @@ import com.pray.entity.dto.LoginFormDTO;
 import com.pray.entity.dto.RegisterDTO;
 import com.pray.entity.po.LoginUser;
 import com.pray.entity.po.User;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.userdetails.UserDetailsService;

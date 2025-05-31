@@ -1,7 +1,7 @@
 package com.pray.exception;
 
 import com.auth0.jwt.exceptions.JWTDecodeException;
-import com.pray.utils.Result;
+import com.pray.common.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
