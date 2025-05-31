@@ -165,7 +165,7 @@
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
-                <version>2.3.32</version>
+                <version>2.3.34</version>
             </dependency>
             <!--Velocity（默认-->
             <dependency>
@@ -177,7 +177,7 @@
             <dependency>
                 <groupId>com.rabbitmq</groupId>
                 <artifactId>amqp-client</artifactId>
-                <version>5.14.2</version>
+                <version>5.22.0</version>
             </dependency>
             <!--websocket-->
             <dependency>
@@ -199,7 +199,7 @@
     <repositories>
         <repository>
             <id>YOUR-PROJECT-NAME-mvn-repo</id>
-            <url>file:////D:/Maven-Repository</url>
+            <url>file:////D:/Env/maven-3.8.3/repo</url>
         </repository>
     </repositories>
 

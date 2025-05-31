@@ -140,10 +140,6 @@
             <version>2.13.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.auth0</groupId>
@@ -163,7 +159,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
             <scope>compile</scope>
         </dependency>
 
@@ -276,7 +271,7 @@
     <repositories>
         <repository>
             <id>YOUR-PROJECT-NAME-mvn-repo</id>
-            <url>file:////D:/Maven-Repository</url>
+            <url>file:////D:/Env/maven-3.8.3/repo</url>
         </repository>
     </repositories>
     <!--打包的插件-->
