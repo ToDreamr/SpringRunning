@@ -266,12 +266,36 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
+
+
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>5.1.3</version> <!-- 2023年最新稳定版 -->
+        </dependency>
     </dependencies>
 
     <repositories>
         <repository>
             <id>YOUR-PROJECT-NAME-mvn-repo</id>
             <url>file:////D:/Env/maven-3.8.3/repo</url>
+        </repository>
+
+        <repository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
     <!--打包的插件-->

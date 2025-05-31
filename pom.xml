@@ -14,16 +14,24 @@
         <version>3.1.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <!--确保模块的顺序，maven在没有指定之前按照排列顺序进行编译-->
     <modules>
-        <module>backend-service</module>
-        <module>backend-generator</module>
         <module>backend-maven-plugin</module>
+        <module>backend-generator</module>
         <module>backend-rpc-core</module>
         <module>backend-mybatis-core</module>
+        <module>backend-service</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.pray</groupId>
+                <artifactId>backend-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
             <!--jdbc相关依赖-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -178,6 +186,12 @@
                 <groupId>com.rabbitmq</groupId>
                 <artifactId>amqp-client</artifactId>
                 <version>5.22.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>5.1.3</version> <!-- 2023年最新稳定版 -->
             </dependency>
             <!--websocket-->
             <dependency>
