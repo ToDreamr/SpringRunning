@@ -33,7 +33,19 @@ import java.util.Map;
  */
 @Configuration
 public class RedisSerializeConfig {
-    //序列化RedisTemplate
+    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+    /**
+     * 序列化RedisTemplate
+     * 1.创建RedisTemplate对象
+     * 2.设置连接工厂
+     * 3.创建JSON序列化工具
+     *
+     * @param connectionFactory
+     * @return
+     */
     @Bean
     public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory connectionFactory){
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
@@ -46,9 +58,14 @@ public class RedisSerializeConfig {
         return template;
     }
 
-    private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss");
+    /**
+     * json序列化工具
+     * 1.创建序列化工具
+     * 2.设置序列化工具
+     * 3.返回序列化工具
+     *
+     * @return
+     */
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
         Map<Class<?>, JsonSerializer<?>> serializers = new HashMap<>();
@@ -64,6 +81,8 @@ public class RedisSerializeConfig {
 
     /**
      * 通过SessionRegistry获取当前所有的登录用户，同时获取Session状态
+     *
+     * @return SessionRegistry
      */
     @Bean
     public SessionRegistry sessionRegistry(){

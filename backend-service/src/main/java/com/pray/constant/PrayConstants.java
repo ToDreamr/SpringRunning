@@ -9,8 +9,15 @@ package com.pray.constant;
  * @since 2023/8/24
  */
 public class PrayConstants {
+    /**
+     * 登录用户的redis key
+     */
     public static final String LOGIN_USER_KEY="pray:user:";
+    /**
+     * 登录用户的过期时间（秒）
+     */
     public static final Long LOGIN_USER_TTL= 43200L;
+
     public static final String FLOW_LIMIT_COUNT="pray:count:";
     public static final String FLOW_LIMIT_BLOCK="pray:block:";
 

@@ -1,9 +1,9 @@
 package com.pray.service.dao.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.pray.entity.dto.BorrowedListDTO;
+import com.pray.entity.dto.UserListDTO;
 import com.pray.entity.po.Book;
-import com.pray.entity.vo.response.BorrowedListVO;
-import com.pray.entity.vo.response.UserListVO;
 import com.pray.mapper.BookMapper;
 import com.pray.service.dao.BookService;
 import com.pray.service.dao.BorrowService;
@@ -54,13 +54,13 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
 
     @Override
-    public Result<List<List<BorrowedListVO>>> borrowList() {
+    public Result<List<List<BorrowedListDTO>>> borrowList() {
         List<Map<String, Object>> mapList = borrowService.getBorrowUsers();
         if (mapList==null||mapList.size() == 0) {
             return Result.message(200,"未找到数据");
         }
 
-        Map<String, BorrowedListVO> borrowedListMap = new HashMap<>();
+        Map<String, BorrowedListDTO> borrowedListMap = new HashMap<>();
 
         for (Map<String, Object> item : mapList) {
             String bookName = (String) item.get("book_name");
@@ -69,21 +69,21 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
             String key = bookName.toLowerCase(); // 使用书名的小写形式作为键
 
-            BorrowedListVO borrowedListVO = borrowedListMap.get(key);
-            if (borrowedListVO == null) {
-                borrowedListVO = new BorrowedListVO();
-                borrowedListVO.setBookNames(bookName);
-                borrowedListVO.setUsers(new ArrayList<>());
-                borrowedListMap.put(key, borrowedListVO);
+            BorrowedListDTO borrowedListDTO = borrowedListMap.get(key);
+            if (borrowedListDTO == null) {
+                borrowedListDTO = new BorrowedListDTO();
+                borrowedListDTO.setBookNames(bookName);
+                borrowedListDTO.setUsers(new ArrayList<>());
+                borrowedListMap.put(key, borrowedListDTO);
             }
 
-            UserListVO userListVO = new UserListVO();
-            userListVO.setUserId(new int[]{userId});
-            userListVO.setUserName(new String[]{username});
-            borrowedListVO.getUsers().add(userListVO);
+            UserListDTO userListDTO = new UserListDTO();
+            userListDTO.setUserId(new int[]{userId});
+            userListDTO.setUserName(new String[]{username});
+            borrowedListDTO.getUsers().add(userListDTO);
         }
 
-        List<List<BorrowedListVO>> listVo = new ArrayList<>();
+        List<List<BorrowedListDTO>> listVo = new ArrayList<>();
         listVo.add(new ArrayList<>(borrowedListMap.values()));
 
         return Result.ok(listVo);

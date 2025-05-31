@@ -6,11 +6,11 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Component;
 
 /**
  * RedisPreProcess
  * 根据面试被问到的问题：生命周期，线程安全性，循环依赖
+ *
  * @author 春江花朝秋月夜
  * @since 2024/7/12 15:21
  */

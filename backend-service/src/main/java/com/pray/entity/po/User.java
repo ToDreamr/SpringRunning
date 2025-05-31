@@ -1,8 +1,7 @@
-package com.pray.entity;
+package com.pray.entity.po;
 
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;

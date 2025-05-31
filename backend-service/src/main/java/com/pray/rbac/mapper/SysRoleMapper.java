@@ -1,9 +1,11 @@
 package com.pray.rbac.mapper;
 
-import com.pray.entity.rbac.SysRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.pray.rbac.provider.SysRoleSQLProvider;
-import org.apache.ibatis.annotations.*;
+import com.pray.entity.po.SysRole;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -11,7 +13,7 @@ import java.util.List;
 * @author Rainy-Heights
 * @description 针对表【tb_sys_role(角色表)】的数据库操作Mapper
 * @createDate 2024-12-17 19:40:57
-* @Entity com.pray.entity.rbac.SysRole
+* @Entity com.pray.entity.po.SysRole
 */
 @Mapper
 public interface SysRoleMapper extends BaseMapper<SysRole> {

@@ -11,6 +11,7 @@ import java.util.Properties;
 /**
  * KaptChaConfig
  *
+ * 验证码
  * @author 春江花朝秋月夜
  * @since 2024/7/13 0:25
  */

@@ -1,13 +1,15 @@
 package com.pray.secure.interceptor;
 
 import cn.hutool.core.text.StrBuilder;
-import com.alibaba.fastjson2.JSON;
 import com.pray.common.DbOperateLog;
 import com.pray.common.PrayThreadPoolExecutor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
-import org.apache.ibatis.mapping.*;
+import org.apache.ibatis.mapping.BoundSql;
+import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.ParameterMapping;
+import org.apache.ibatis.mapping.ParameterMode;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
@@ -20,7 +22,6 @@ import org.springframework.util.CollectionUtils;
 
 import java.sql.Connection;
 import java.time.LocalDateTime;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
@@ -39,6 +40,7 @@ import java.util.regex.Matcher;
         method = "prepare", args = {Connection.class, Integer.class}
 ))
 public class MybatisCustomInterceptor implements Interceptor {
+
     private final ExecutorService pool = PrayThreadPoolExecutor.getPrayExecutor(10,15,20L, TimeUnit.MINUTES,10).build();
 
     @Override

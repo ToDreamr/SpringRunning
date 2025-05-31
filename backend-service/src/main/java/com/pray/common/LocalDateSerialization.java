@@ -16,6 +16,13 @@ import java.time.LocalDateTime;
  */
 public class LocalDateSerialization extends JsonSerializer<LocalDateTime> {
 
+    /**
+     * 时间序列化
+     * @param time
+     * @param jsonGenerator
+     * @param serializerProvider
+     * @throws IOException
+     */
     @Override
     public void serialize(LocalDateTime time, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         jsonGenerator.writeString(time.toString());

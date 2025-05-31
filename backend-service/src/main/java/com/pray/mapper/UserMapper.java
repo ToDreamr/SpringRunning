@@ -1,9 +1,9 @@
 package com.pray.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.pray.entity.User;
-import com.pray.entity.rbac.SysRole;
-import com.pray.entity.rbac.SysRoleExtend;
+import com.pray.entity.po.SysRole;
+import com.pray.entity.po.SysRoleExtend;
+import com.pray.entity.po.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

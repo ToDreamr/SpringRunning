@@ -1,10 +1,10 @@
 package com.pray.service.dao;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.pray.entity.User;
-import com.pray.entity.dto.LoginFormDto;
-import com.pray.entity.dto.RegisterDto;
+import com.pray.entity.dto.LoginFormDTO;
+import com.pray.entity.dto.RegisterDTO;
 import com.pray.entity.po.LoginUser;
+import com.pray.entity.po.User;
 import com.pray.utils.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,9 +18,9 @@ import java.io.IOException;
 * @createDate 2023-08-24 13:00:41
 */
 public interface UserService extends IService<LoginUser> , UserDetailsService {
-    Result login(HttpServletRequest request, LoginFormDto loginFormDto) throws Exception;
+    Result login(HttpServletRequest request, LoginFormDTO loginFormDto) throws Exception;
 
-    Result register(RegisterDto registerDto);
+    Result register(RegisterDTO registerDto);
 
     Result sendCode(String email);
 

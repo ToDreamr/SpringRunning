@@ -41,6 +41,7 @@ public class FileController {
         FileUtil.writeBytes(file.getBytes(), rootFilePath);
         return Result.ok("http://" + ip + ":" + port + "/files/" + flag);
     }
+
     @GetMapping("/loginCheck")
     @BackendBaseLog(title = "登录校验",serviceType = "校验服务")
     public Result<String> checkAnnotationLogin(){

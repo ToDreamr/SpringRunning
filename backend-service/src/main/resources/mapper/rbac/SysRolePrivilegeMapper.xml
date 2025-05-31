@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pray.rbac.mapper.SysRolePrivilegeMapper">
 
-    <resultMap id="BaseResultMap" type="com.pray.entity.rbac.SysRolePrivilege">
+    <resultMap id="BaseResultMap" type="com.pray.entity.po.SysRolePrivilege">
             <result property="roleId" column="role_id" jdbcType="BIGINT"/>
             <result property="privilegeId" column="privilege_id" jdbcType="BIGINT"/>
     </resultMap>

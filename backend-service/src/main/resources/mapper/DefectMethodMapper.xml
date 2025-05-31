@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pray.mapper.DefectMethodMapper">
 
-    <resultMap id="BaseResultMap" type="com.pray.entity.DefectMethod">
+    <resultMap id="BaseResultMap" type="com.pray.entity.po.DefectMethod">
         <result property="dmId" column="dm_id" jdbcType="INTEGER"/>
         <result property="defectName" column="defect_name" jdbcType="VARCHAR"/>
         <result property="methodName" column="method_name" jdbcType="VARCHAR"/>
@@ -20,7 +20,7 @@
     </sql>
 
     <!--加入ResultMap的好处是可以将实体Bean和数据库的字段进行映射对应-->
-    <resultMap id="DefectResultItemMap" type="com.pray.entity.DefectMethod">
+    <resultMap id="DefectResultItemMap" type="com.pray.entity.po.DefectMethod">
         <result column="DM_ID" property="dmId" jdbcType="DECIMAL"/>
         <result column="DEFECT_NAME" property="defectName" jdbcType="VARCHAR"/>
         <result column="METHOD_NAME" property="methodName" jdbcType="VARCHAR"/>

@@ -1,7 +1,5 @@
 package com.pray.registry;
 
-import com.pray.config.RegistryConfig;
-
 /**
  * RegistryFactory
  *

@@ -14,7 +14,7 @@ backend:
     port: 3306
     database: spring_runner
     username: root
-    password: 123456
+    password: root
   url: 127.0.0.1
   security:
     security:

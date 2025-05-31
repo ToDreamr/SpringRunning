@@ -1,17 +1,13 @@
 package com.pray.service;
 
-import com.pray.entity.DefectMethod;
+import com.pray.entity.po.DefectMethod;
 import com.pray.mapper.DefectMethodMapper;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * DefectMethodQcService

@@ -1,4 +1,4 @@
-package com.pray.entity;
+package com.pray.entity.po;
 
 
 import lombok.ToString;

@@ -1,8 +1,8 @@
 package com.pray.service.dao;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.pray.entity.dto.BorrowedListDTO;
 import com.pray.entity.po.Book;
-import com.pray.entity.vo.response.BorrowedListVO;
 import com.pray.utils.Result;
 
 import java.util.List;
@@ -28,6 +28,6 @@ public interface BookService extends IService<Book> {
      */
     int selectBookRestCount(int bookId);
 
-    Result<List<List<BorrowedListVO>>> borrowList();
+    Result<List<List<BorrowedListDTO>>> borrowList();
 
 }

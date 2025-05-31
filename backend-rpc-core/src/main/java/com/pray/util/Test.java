@@ -6,7 +6,6 @@ import org.apache.curator.shaded.com.google.common.io.Resources;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

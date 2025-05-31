@@ -1,7 +1,7 @@
 package com.pray.rbac.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.pray.entity.rbac.SysUserRole;
+import com.pray.entity.po.SysUserRole;
 import com.pray.rbac.mapper.SysUserRoleMapper;
 import com.pray.rbac.service.SysUserRoleService;
 import org.springframework.stereotype.Service;

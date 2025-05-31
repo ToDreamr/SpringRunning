@@ -1,6 +1,5 @@
-package com.pray.entity.rbac;
+package com.pray.entity.po;
 
-import com.pray.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 

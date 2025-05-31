@@ -1,6 +1,7 @@
-package com.pray.entity.vo.response;
+package com.pray.entity.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
@@ -10,8 +11,11 @@ import java.util.List;
  * @author 春江花朝秋月夜
  * @since 2024/3/26 22:18
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class BorrowedListVO {
+public class BorrowedListDTO extends CommonDTO{
+
     private String  bookNames;
-    private List<UserListVO> users;
+
+    private List<UserListDTO> users;
 }

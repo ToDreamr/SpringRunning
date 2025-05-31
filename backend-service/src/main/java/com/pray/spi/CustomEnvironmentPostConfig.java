@@ -23,7 +23,10 @@ public class CustomEnvironmentPostConfig implements EnvironmentPostProcessor { /
 
     //静态字段，无法使用Spring注入，后续使用文件内容？？？
     public static final String TABLE_NAME = "tb_sys";
-    public static final String SQL = "select * from `spring_runner`.tb_sys_conf";
+    private static final String SQL = "select * from `spring_runner`.tb_sys_conf";
+    private static final String CREATE_TABLE = "create table if not exists `spring_runner`.tb_sys_conf(id int primary key auto_increment, " +
+            "sys_param_key varchar(255) null comment '配置键' ," +
+            "sys_param_value varchar(255) null comment '配置内容') ";
 
     public static final String sqlPath = "";
     private static final String DATABASE = "spring_runner";
@@ -46,10 +49,13 @@ public class CustomEnvironmentPostConfig implements EnvironmentPostProcessor { /
                 initDb(connection);
                 //加载配置文件
                 try (Statement statement = connection.createStatement()) {
+                    statement.execute(CREATE_TABLE);
                     try (ResultSet resultSet = statement.executeQuery(SQL)) {
                         while (resultSet.next()) {
-                            map.put(resultSet.getString("config_key"), resultSet.getString("config_value"));
+                            map.put(resultSet.getString("sys_param_key"), resultSet.getString("sys_param_value"));
                         }
+                    } catch (SQLSyntaxErrorException e) {
+                        log.error("系统配置初始化失败");
                     }
                 }
             }
@@ -61,7 +67,6 @@ public class CustomEnvironmentPostConfig implements EnvironmentPostProcessor { /
         } catch (Exception e) {
             log.error("系统配置加载失败",e);
             // 输出异常堆栈信息到控制台（在开发、测试阶段方便查看，生产环境可根据需求决定是否保留）
-            e.printStackTrace();
             //todo loadWithDefaultConfig()
         }
     }

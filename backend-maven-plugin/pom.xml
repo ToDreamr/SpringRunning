@@ -26,7 +26,33 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.0.b2</version>
+        </dependency>
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <!-- 关键：必须有 maven-plugin-plugin 才能生成 plugin.xml -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.6.4</version> <!-- 推荐使用最新稳定版 -->
+                <executions>
+                    <execution>
+                        <id>generate-descriptor</id>
+                        <goals>
+                            <goal>descriptor</goal> <!-- 生成 plugin.xml -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
