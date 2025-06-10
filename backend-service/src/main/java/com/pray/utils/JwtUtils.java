@@ -7,7 +7,7 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.pray.entity.po.LoginUser;
-import com.pray.exception.ErrorCode;
+import com.pray.enums.ErrorCode;
 import com.pray.exception.ThrowUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;

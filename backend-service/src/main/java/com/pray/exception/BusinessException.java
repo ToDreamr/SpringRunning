@@ -1,5 +1,7 @@
 package com.pray.exception;
 
+import com.pray.enums.ErrorCode;
+
 /**
  * BusinessException
  *

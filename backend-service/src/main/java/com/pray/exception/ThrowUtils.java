@@ -1,5 +1,7 @@
 package com.pray.exception;
 
+import com.pray.enums.ErrorCode;
+
 /**
  * ThrowUtils
  * 错误抛出工具
@@ -21,7 +23,7 @@ public class ThrowUtils {
      * @param condition
      * @param errorCode
      */
-    public static void throwIf(boolean condition,ErrorCode errorCode){
+    public static void throwIf(boolean condition, ErrorCode errorCode){
         throwIf(condition,new BusinessException(errorCode.getCode()));
     }
     public static void throwIf(boolean condition, ErrorCode errorCode, String message) {

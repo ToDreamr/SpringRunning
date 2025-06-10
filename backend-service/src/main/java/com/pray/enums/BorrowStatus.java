@@ -1,4 +1,4 @@
-package com.pray.entity.enums;
+package com.pray.enums;
 
 import lombok.Getter;
 

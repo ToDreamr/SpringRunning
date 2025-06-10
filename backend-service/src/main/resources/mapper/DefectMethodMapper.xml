@@ -73,6 +73,10 @@
         and dm_id = #{dm_id}
     </select>
 
+    <select id="getDefectMethodScriptByDmId" resultType="java.lang.String">
+        select <include refid="Base_Column_List"/> from tb_defect_method where dm_id = ${dmId}
+    </select>
+
     <!--
     int updateByMap(@Param("userMap") Map<String, Object> map);
     -->

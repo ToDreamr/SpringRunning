@@ -15,9 +15,14 @@ import java.util.List;
 */
 @Mapper
 public interface DefectMethodMapper extends BaseMapper<DefectMethod> {
+
     List<DefectMethod> getQcMethodItems();
+
     int batchInsertItems(@Param("methodList") List<DefectMethod> defectMethodList);
+
     List<DefectMethod> selectForEachConditionally(@Param("dm_id")Integer dmId,@Param("runScript") String runScript);
+
+    String getDefectMethodScriptByDmId(@Param("dm_id")Integer dmId);
 }
 
 

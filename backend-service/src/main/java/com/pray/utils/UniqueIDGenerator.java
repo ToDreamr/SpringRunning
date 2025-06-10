@@ -19,7 +19,7 @@ import java.time.format.DateTimeFormatter;
 @Component
 public class UniqueIDGenerator {
     @Autowired
-    RedisTemplate<Object, Object> redisTemplate;
+    private RedisTemplate<Object, Object> redisTemplate;
     private static final long BEGIN_TIMESTAMP = 1694709840L;
     private static final int COUNT_BITS = 32;// 向左移动32位
 

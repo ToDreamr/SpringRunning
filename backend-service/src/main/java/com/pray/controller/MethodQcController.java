@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class MethodQcController {
 
-    DefectMethodQcService methodQcService;
+    private DefectMethodQcService methodQcService;
+
     @GetMapping(value = "/method")
     public Result<Object> methodQC(){
         return Result.ok(methodQcService.getMethodQc());

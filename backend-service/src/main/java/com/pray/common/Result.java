@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Result<T> {
-    int code;
-    String message;
-    T data;
+    private int code;
+    private String message;
+    private T data;
 
     public Result(T data) {
         this.data = data;

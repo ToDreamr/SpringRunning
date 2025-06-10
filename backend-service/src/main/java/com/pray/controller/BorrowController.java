@@ -1,6 +1,6 @@
 package com.pray.controller;
 
-import com.pray.entity.enums.BorrowStatus;
+import com.pray.enums.BorrowStatus;
 import com.pray.service.dao.BookService;
 import com.pray.service.dao.BookUserService;
 import com.pray.service.dao.BorrowService;

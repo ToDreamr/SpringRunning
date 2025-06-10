@@ -2,7 +2,7 @@ package com.pray.service.dao.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.pray.entity.enums.BorrowStatus;
+import com.pray.enums.BorrowStatus;
 import com.pray.entity.po.Book;
 import com.pray.entity.po.BookUser;
 import com.pray.entity.po.Borrow;

@@ -1,4 +1,4 @@
-package com.pray.exception;
+package com.pray.enums;
 
 /**
  * ErrorCode
