@@ -30,7 +30,6 @@ public class ScriptEngineFactoryProvider {
         try {
             engine = new org.openjdk.nashorn.api.scripting.NashornScriptEngineFactory()
                     .getScriptEngine();
-            if (engine != null) return engine;
             return engine;
         } catch (NoClassDefFoundError e) {
             // Nashorn不可用，继续尝试其他方式

@@ -3,6 +3,7 @@ package com.pray.service;
 import com.pray.entity.po.DefectMethod;
 import com.pray.mapper.DefectMethodMapper;
 import com.pray.script.JavaScriptExecutor;
+import com.pray.script.MultiScriptExecutorProvider;
 import com.pray.script.ScriptExecutor;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
 import java.util.List;
+
+import static com.pray.enums.ScriptTypeEnum.JAVASCRIPT;
 
 /**
  * DefectMethodQcService
@@ -49,7 +52,7 @@ public class DefectMethodQcService {
             try {
                 methods=this.getClass().getMethod(defectMethod.getMethodName(),String.class,DefectMethod.class);
                 if (StringUtils.isNoneEmpty(defectMethod.getRunScript())){
-                    JavaScriptExecutor javaScriptExecutor = new JavaScriptExecutor();
+                    JavaScriptExecutor javaScriptExecutor = (JavaScriptExecutor) MultiScriptExecutorProvider.getExecutorWithScriptType(JAVASCRIPT);
                     String result = (String) javaScriptExecutor.execute(defectMethod.getRunScript(),null);
                     System.out.println(result);
                 }

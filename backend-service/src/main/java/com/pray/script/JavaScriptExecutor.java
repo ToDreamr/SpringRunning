@@ -16,7 +16,25 @@ import java.util.Map;
  * @since 2025/6/10 20:55
  */
 public class JavaScriptExecutor extends ScriptExecutor {
+
+    public volatile static JavaScriptExecutor instance;
+
     private ScriptEngine engine;
+
+    private JavaScriptExecutor() {
+
+    }
+
+    public static JavaScriptExecutor getInstance(){
+        if (instance==null){
+            synchronized (JavaScriptExecutor.class){
+                if (instance==null){
+                    instance=new JavaScriptExecutor();
+                }
+            }
+        }
+        return instance;
+    }
 
     @Override
     protected void initEngine() throws ScriptExecutionException {
