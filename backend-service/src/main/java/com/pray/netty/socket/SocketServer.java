@@ -1,4 +1,4 @@
-package com.pray.socket;
+package com.pray.netty.socket;
 
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;

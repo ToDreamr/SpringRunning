@@ -21,6 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 5.使用Redis实现
  * 6.使用Lua脚本实现
  * <p>
+ *
  * @author 春江花朝秋月夜
  * @since 2023/8/25 13:13
  */
@@ -31,15 +32,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 @AllArgsConstructor
 public class RestrictHandler {
 
-    public  int limit;
-    public  int time;
+    public int limit;
+    public int time;
     private final AtomicBoolean state = new AtomicBoolean(false);
-    public final BlockingQueue<TimeDelay> delayQueue=new DelayQueue<>();
+    public final BlockingQueue<TimeDelay> delayQueue = new DelayQueue<>();
     public final Map<String, DelayQueueItem> map = new ConcurrentHashMap<>();
+    private final Map<String, TimeDelay> delayMap = new ConcurrentHashMap<>();
 
-    public void put(String key,AtomicInteger value,long time){
+    public void put(String key, AtomicInteger value, long time) {
         map.put(key, new DelayQueueItem(value, time));
         delayQueue.add(new TimeDelay(key, time));
+        TimeDelay delayTask = new TimeDelay(key, time);
+        delayQueue.add(delayTask);
+        delayMap.put(key, delayTask); // 记录 TimeDelay
     }
 
     public boolean checkAndPut(String key, int limit) {
@@ -49,27 +54,36 @@ public class RestrictHandler {
             return newItem;
         });
         item.incr(); // 递增计数
-        return item.value.get() > limit;
+        return item.value.get() <= limit;
     }
 
-    public void removeDelayKey(String key){
+    public void removeDelayKey(String key) {
         map.remove(key);
         // 方法1：遍历队列移除（线程安全）
         delayQueue.removeIf(item -> item.key.equals(key));
     }
 
     @Data
-    private class TimeDelay implements Delayed{
+    private class TimeDelay implements Delayed {
         final String key;
         final long expireTime;
 
+
+        /**
+         * 使用构造方法进行初始化的缺点：
+         * 1. 每次创建对象时都需要调用init方法，增加了代码的复杂性
+         * 2.只有一个线程能够进入init方法并执行初始化逻辑，可能会导致多个线程同时进入init方法但不能执行状态改变成功，从而导致资源竞争和性能问题。
+         *
+         * @param key
+         * @param expireTime
+         */
         public TimeDelay(String key, long expireTime) {
             init();
             this.key = key;
             this.expireTime = new Date().getTime() + (expireTime * 1000);
         }
 
-        private void init(){
+        private void init() {
             if (state.compareAndSet(false, true)) {
                 Thread thread = new Thread(() -> {
                     while (true) {
@@ -90,7 +104,7 @@ public class RestrictHandler {
 
         @Override
         public int compareTo(Delayed o) {
-            return Long.compare(this.getDelay(TimeUnit.MILLISECONDS),o.getDelay(TimeUnit.MILLISECONDS));
+            return Long.compare(this.getDelay(TimeUnit.MILLISECONDS), o.getDelay(TimeUnit.MILLISECONDS));
         }
 
         @Override

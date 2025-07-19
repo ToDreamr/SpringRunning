@@ -5,7 +5,10 @@ import com.pray.service.dao.BookService;
 import com.pray.service.dao.BookUserService;
 import com.pray.service.dao.BorrowService;
 import com.pray.common.Result;
+import com.pray.template.CommonBusinessCallBack;
+import com.pray.template.SpTransactionTemplate;
 import jakarta.annotation.Resource;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +32,11 @@ public class BorrowController {
     @Resource
     private BookUserService bookUserService;
 
+    @Resource
+    private SpTransactionTemplate spTransactionTemplate;
+
+    @Resource
+    private TransactionTemplate transactionTemplate;
     /**
      * 获取借阅书籍的数据
      * @return Result<List<List<BorrowedListVO>>>
@@ -46,13 +54,19 @@ public class BorrowController {
      */
     @PostMapping("/{userId}/{bookId}")
     public Result<Map<String, Object>> borrowBook(@PathVariable("userId") int userId,@PathVariable("bookId") int bookId){
-        int isBorrowed = bookUserService.borrowBook(userId, bookId);
+        Result<Map<String, Object>> result = new Result<>();
+        spTransactionTemplate.executeWithTransaction(new CommonBusinessCallBack() {
+            @Override
+            public void check() {
+
+            }
+
+            @Override
+            public void execute() {
+                bookUserService.borrowBook(userId, bookId);
+            }
+        },transactionTemplate,result);
         List<Map<String, Object>> mapList = borrowService.selectBorrowDetails(userId, bookId);
-        if (isBorrowed == BorrowStatus.SUCCESS.getCode()) {
-            return Result.ok(mapList.get(0),"借阅成功");
-        } else if (isBorrowed==BorrowStatus.BORROWED.getCode()) {
-            return Result.fail("借阅失败，这本书你已经借过了");
-        }
-        return Result.fail("借阅失败");
+        return result.data(mapList.get(0));
     }
 }

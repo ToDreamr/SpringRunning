@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author Cotton Eye Joe
  * @since 2024/10/19 22:29
  */
-@Component
+//@Component
 @Slf4j
 public class OnceRequestFilter implements Filter {
     @Override
