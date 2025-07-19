@@ -25,8 +25,12 @@ public class Reactor implements Closeable, Runnable {
     private final Logger logger = LoggerFactory.getLogger(Reactor.class);
     private final ServerSocketChannel serverChannel;
     private final Selector selector;
-
-    public Reactor() throws IOException{
+    private final int port;
+    /**
+     * @throws IOException
+     */
+    public Reactor(int port) throws IOException{
+        this.port = port;
         serverChannel = ServerSocketChannel.open();
         selector = Selector.open();
     }
@@ -47,7 +51,7 @@ public class Reactor implements Closeable, Runnable {
     public void run() {
         // 建立连接并选择对应的处理器
         try {
-            serverChannel.bind(new InetSocketAddress(8080));
+            serverChannel.bind(new InetSocketAddress(port));
             //要使用选择器进行操作，必须使用非阻塞的方式，这样才不会像阻塞IO那样卡在accept()，而是直接通过，让选择器去进行下一步操作
             serverChannel.configureBlocking(false);
             serverChannel.register(selector, SelectionKey.OP_ACCEPT, new Acceptor(serverChannel, selector));
@@ -76,7 +80,7 @@ public class Reactor implements Closeable, Runnable {
 
     public static void main(String[] args) {
         //创建Reactor对象，启动，完事
-        try (Reactor reactor = new Reactor()){
+        try (Reactor reactor = new Reactor(8080)){
             reactor.run();
         }catch (IOException e) {
             e.printStackTrace();

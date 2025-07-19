@@ -1,5 +1,6 @@
 package com.pray;
 
+import com.pray.netty.singlereactor.Reactor;
 import com.pray.netty.socket.SocketServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,20 +23,9 @@ public class LoadApplication {
         try {
             int port = 8887; // 843 flash policy port
 
-            SocketServer s = new SocketServer(port);
-            s.start();
-            log.info("ChatServer started on port: {}", s.getPort());
-
-            BufferedReader sysin = new BufferedReader(new InputStreamReader(System.in));
-            while (true) {
-                String in = sysin.readLine();
-                s.broadcast(in);
-                if (in.equals("exit")) {
-                    s.stop(1000);
-                    break;
-                }
-            }
-        } catch (IOException | InterruptedException e) {
+            Reactor reactor = new Reactor(port);
+            reactor.run();
+        } catch (IOException e) {
             log.error("Error in socketApplication: ", e);
         }
     }

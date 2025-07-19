@@ -7,36 +7,16 @@
     <option name="showSidePanel" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat:add script execute template">
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/BaseFacadeResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/CheckRetryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/CheckRetryResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/file/FileDownLoadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/file/FileDownLoadServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/bio/SocketChannelClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/bio/SocketChannelServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/nio/NIOClientChannel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/nio/NIOServerSocketChannel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Acceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Reactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/CheckRetryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/CheckRetryServiceCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/CheckServiceCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/DefaultCheckRetryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/RetryServiceCallable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/RetryServiceInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/template/CommonBusinessCallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/template/SpTransactionTemplate.java" afterDir="false" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat: add an invoker for spi facade service &amp; some nio lab classes">
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/SpiServiceLoad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/resources/META-INF/service/com.pray.spi.CheckRetryService" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/LoadApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/LoadApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/controller/BorrowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/controller/BorrowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/delay/RestrictHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/delay/RestrictHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/filter/OnceRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/secure/filter/OnceRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/socket/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/socket/SocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/CheckRetryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/CheckRetryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/bio/SocketChannelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/bio/SocketChannelClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/nio/NIOClientChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/nio/NIOClientChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Reactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Reactor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/DefaultCheckRetryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/DefaultCheckRetryServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +136,7 @@
     "Application.SocketChannelClient.executor": "Run",
     "Application.SocketChannelClient2.executor": "Run",
     "Application.SocketChannelServer.executor": "Run",
+    "Application.SpiServiceLoad.executor": "Debug",
     "Application.ToStringTest.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "DefaultPlantUmlFileTemplate": "UML Sequence",
@@ -275,7 +256,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringRunning">
+  <component name="RunManager" selected="Application.SpiServiceLoad">
     <configuration name="ApplicationStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pray.ApplicationStarter" />
       <module name="backend-service" />
@@ -328,19 +309,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SocketChannelClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.netty.bio.SocketChannelClient" />
-      <module name="backend-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pray.netty.bio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SocketChannelClient2" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -356,6 +324,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.pray.netty.bio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpiServiceLoad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pray.spi.SpiServiceLoad" />
+      <module name="backend-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pray.spi.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -417,10 +398,10 @@
     <list>
       <item itemvalue="Application.SocketChannelClient2" />
       <item itemvalue="Application.NIOClientChannel2" />
+      <item itemvalue="Application.SpiServiceLoad" />
       <item itemvalue="Application.ApplicationStarter" />
       <item itemvalue="Application.Reactor" />
       <item itemvalue="Application.NIOClientChannel" />
-      <item itemvalue="Application.SocketChannelClient" />
       <item itemvalue="Application.SocketChannelServer" />
       <item itemvalue="Remote JVM Debug.远程JVM-DEBUG" />
       <item itemvalue="Shell Script.redis" />
@@ -428,11 +409,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpiServiceLoad" />
         <item itemvalue="Application.ApplicationStarter" />
         <item itemvalue="Application.Reactor" />
         <item itemvalue="Application.NIOClientChannel" />
         <item itemvalue="Application.SocketChannelServer" />
-        <item itemvalue="Application.SocketChannelClient" />
       </list>
     </recent_temporary>
   </component>
@@ -632,7 +613,7 @@
       <workItem from="1752396493315" duration="2743000" />
       <workItem from="1752422332741" duration="11150000" />
       <workItem from="1752669503032" duration="1193000" />
-      <workItem from="1752910524585" duration="4796000" />
+      <workItem from="1752910524585" duration="8395000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -858,7 +839,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749959359849</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: add an invoker for spi facade service &amp; some nio lab classes">
+      <option name="closed" value="true" />
+      <created>1752915596824</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1752915596824</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -890,7 +879,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev-huaxing" />
+                        <option value="github/dev-lombokfix" />
                       </list>
                     </value>
                   </entry>
@@ -934,7 +923,8 @@
     <MESSAGE value="feat:refactor the implements of restricthandler" />
     <MESSAGE value="feat:refactor the implements of restricthandler" />
     <MESSAGE value="feat:add script execute template" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:add script execute template" />
+    <MESSAGE value="feat: add an invoker for spi facade service &amp; some nio lab classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add an invoker for spi facade service &amp; some nio lab classes" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

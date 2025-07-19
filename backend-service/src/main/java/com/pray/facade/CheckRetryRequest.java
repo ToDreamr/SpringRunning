@@ -20,4 +20,11 @@ public class CheckRetryRequest {
     public void setCheck(String check) {
         this.check = check;
     }
+
+    @Override
+    public String toString() {
+        return "CheckRetryRequest{" +
+                "check='" + check + '\'' +
+                '}';
+    }
 }

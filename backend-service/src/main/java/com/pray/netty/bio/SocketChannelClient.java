@@ -25,7 +25,7 @@ public class SocketChannelClient {
         SocketChannel clientChannel = null;
         try {
             clientChannel = SocketChannel.open();
-            clientChannel.connect(new InetSocketAddress("localhost", 8080));
+            clientChannel.connect(new InetSocketAddress("localhost", 8887));
 
             Scanner scanner = new Scanner(System.in);
 

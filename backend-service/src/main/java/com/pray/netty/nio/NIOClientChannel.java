@@ -19,7 +19,7 @@ public class NIOClientChannel {
 
     public static void main(String[] args) {
         //创建一个新的SocketChannel，一会通过通道进行通信
-        try (SocketChannel channel = SocketChannel.open(new InetSocketAddress("localhost", 8080));
+        try (SocketChannel channel = SocketChannel.open(new InetSocketAddress("localhost", 8887));
              Scanner scanner = new Scanner(System.in)) {
             System.out.println("已连接到服务端！");
             while (true) {   //咱给它套个无限循环，这样就能一直发消息了

@@ -19,6 +19,7 @@ public class DefaultCheckRetryServiceImpl implements CheckRetryService {
      */
     @Override
     public CheckRetryResult asyncRetryExecute(CheckRetryRequest checkRetryRequest) {
+        System.out.println(checkRetryRequest);
         return null;
     }
 
@@ -30,4 +31,6 @@ public class DefaultCheckRetryServiceImpl implements CheckRetryService {
     public CheckRetryResult syncRetryExecute(CheckRetryRequest checkRetryRequest) {
         return null;
     }
+
+
 }
