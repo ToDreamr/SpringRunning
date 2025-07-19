@@ -4,9 +4,7 @@ package com.pray.spi;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.apache.commons.collections.CollectionUtils;
-import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
-import org.springframework.core.metrics.ApplicationStartup;
-import org.springframework.core.metrics.StartupStep;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -24,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  * @since 2025/7/19 15:52
  */
 @Component
-public class CheckRetryServiceCache implements ApplicationStartup {
+public class CheckRetryServiceCache implements InitializingBean {
 
     private ScheduledExecutorService scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
 
@@ -34,29 +32,10 @@ public class CheckRetryServiceCache implements ApplicationStartup {
      */
     private static Set<String> retryServiceChecker = Sets.newConcurrentHashSet();
 
-
-    /**
-     * @param name
-     * @return
-     */
-    @Override
-    public StartupStep start(String name) {
-        scheduledExecutor.scheduleWithFixedDelay(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        loadRetryServiceChecker();
-                        refreshSubscriberChecker();
-                    }
-                }
-        ,0,180, TimeUnit.SECONDS);
-        return null;
-    }
-
     private void loadRetryServiceChecker() {
-        retryServiceChecker.add("rainyServiceChecker");
-        retryServiceChecker.add("saleForceServiceChecker");
-        retryServiceChecker.add("iexpbizfundprodServiceChecker");
+        retryServiceChecker.add("rainyServiceChecker_retry");
+        retryServiceChecker.add("saleForceServiceChecker_retry");
+        retryServiceChecker.add("iexpbizfundprodServiceChecker_retry");
     }
 
     private void refreshSubscriberChecker() {
@@ -71,4 +50,19 @@ public class CheckRetryServiceCache implements ApplicationStartup {
     }
 
 
+    /**
+     * @throws Exception
+     */
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        scheduledExecutor.scheduleWithFixedDelay(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        loadRetryServiceChecker();
+                        refreshSubscriberChecker();
+                    }
+                }
+                ,0,180, TimeUnit.SECONDS);
+    }
 }

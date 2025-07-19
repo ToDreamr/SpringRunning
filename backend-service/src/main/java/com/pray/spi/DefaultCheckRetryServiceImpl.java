@@ -29,6 +29,7 @@ public class DefaultCheckRetryServiceImpl implements CheckRetryService {
      */
     @Override
     public CheckRetryResult syncRetryExecute(CheckRetryRequest checkRetryRequest) {
+        System.out.println(checkRetryRequest);
         return null;
     }
 

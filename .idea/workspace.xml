@@ -7,16 +7,11 @@
     <option name="showSidePanel" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat: add an invoker for spi facade service &amp; some nio lab classes">
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/SpiServiceLoad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-service/src/main/resources/META-INF/service/com.pray.spi.CheckRetryService" afterDir="false" />
+    <list default="true" id="75d4be1c-5898-46b5-9032-25a4752173ad" name="更改" comment="feat: publish a spi interface">
+      <change afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/config/ServiceLoaderConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/LoadApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/LoadApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/CheckRetryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/facade/CheckRetryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/bio/SocketChannelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/bio/SocketChannelClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/nio/NIOClientChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/nio/NIOClientChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Reactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/netty/singlereactor/Reactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/DefaultCheckRetryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/DefaultCheckRetryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/CheckRetryServiceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/CheckRetryServiceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/SpiServiceLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend-service/src/main/java/com/pray/spi/SpiServiceLoad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,6 +172,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Shell Script.redis.executor": "Run",
+    "Spring Boot.SpiServiceLoad.executor": "Run",
     "Spring Boot.SpringRunning.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
@@ -256,7 +252,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SpiServiceLoad">
+  <component name="RunManager" selected="Spring Boot.SpiServiceLoad">
     <configuration name="ApplicationStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pray.ApplicationStarter" />
       <module name="backend-service" />
@@ -318,19 +314,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SocketChannelServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pray.netty.bio.SocketChannelServer" />
-      <module name="backend-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pray.netty.bio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SpiServiceLoad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pray.spi.SpiServiceLoad" />
       <module name="backend-service" />
@@ -373,6 +356,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="SpiServiceLoad" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="backend-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.pray.spi.SpiServiceLoad" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pray.spi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringRunning" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="backend-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.pray.SpringRunning" />
@@ -402,18 +398,18 @@
       <item itemvalue="Application.ApplicationStarter" />
       <item itemvalue="Application.Reactor" />
       <item itemvalue="Application.NIOClientChannel" />
-      <item itemvalue="Application.SocketChannelServer" />
       <item itemvalue="Remote JVM Debug.远程JVM-DEBUG" />
       <item itemvalue="Shell Script.redis" />
       <item itemvalue="Spring Boot.SpringRunning" />
+      <item itemvalue="Spring Boot.SpiServiceLoad" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.SpiServiceLoad" />
         <item itemvalue="Application.SpiServiceLoad" />
         <item itemvalue="Application.ApplicationStarter" />
         <item itemvalue="Application.Reactor" />
         <item itemvalue="Application.NIOClientChannel" />
-        <item itemvalue="Application.SocketChannelServer" />
       </list>
     </recent_temporary>
   </component>
@@ -613,7 +609,7 @@
       <workItem from="1752396493315" duration="2743000" />
       <workItem from="1752422332741" duration="11150000" />
       <workItem from="1752669503032" duration="1193000" />
-      <workItem from="1752910524585" duration="8395000" />
+      <workItem from="1752910524585" duration="9961000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -847,7 +843,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752915596824</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat: publish a spi interface">
+      <option name="closed" value="true" />
+      <created>1752924297144</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1752924297144</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -899,7 +903,6 @@
       <path value="$PROJECT_DIR$/.." />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="init" />
     <MESSAGE value="feat:Nov.8" />
     <MESSAGE value="feat:Nov.17" />
     <MESSAGE value="feat:Nov.20" />
@@ -924,11 +927,13 @@
     <MESSAGE value="feat:refactor the implements of restricthandler" />
     <MESSAGE value="feat:add script execute template" />
     <MESSAGE value="feat: add an invoker for spi facade service &amp; some nio lab classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add an invoker for spi facade service &amp; some nio lab classes" />
+    <MESSAGE value="feat: publish a spi interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: publish a spi interface" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="java.util.ServiceLoader" memberName="serviceName" />
         <PinnedItemInfo parentTag="org.apache.curator.x.discovery.details.ServiceDiscoveryImpl" memberName="client" />
         <PinnedItemInfo parentTag="java.lang.reflect.Method" memberName="parameterTypes" />
       </pinned-members>
